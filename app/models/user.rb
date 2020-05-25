@@ -3,4 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :activities, dependent: :destroy
+  validates :first_name, :age, :gender, presence: true
+  validates :gender, inclusion: { in: ["male", "female", "non-binary"] }
 end
+
+
