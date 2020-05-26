@@ -8,4 +8,6 @@ class Activity < ApplicationRecord
   validates :title, :date, :description, :category, presence: true
   validates :category, inclusion: { in: ACTIVITIES }
   validates :category, inclusion: { in: VIBES }
+  validates :title, length: { in: (1..25) }
+  validates :description, length: { in: (1..100) }
 end

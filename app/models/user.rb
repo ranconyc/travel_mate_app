@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   validates :first_name, :age, :gender, presence: true
   validates :gender, inclusion: { in: ["male", "female", "non-binary"] }
+  validates :interest, inclusion: { in: Activity::ACTIVITIES }
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
