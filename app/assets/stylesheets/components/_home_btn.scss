@@ -1,0 +1,22 @@
+.tm-btn-primery {
+  display: block;
+  background: $dark-blue;
+  color: $white;
+  border-radius: 4px;
+  padding: 10px 100px;
+  text-align: center;
+  margin: 0px 8px 8px;
+  font-weight: bold;
+}
+
+.tm-btn-secondary {
+  display: block;
+  background: $white;
+  color: $dark-blue;
+  border: 2px solid $dark-blue;
+  border-radius: 4px;
+  padding: 8px 100px;
+  text-align: center;
+  margin: 0px 8px;
+  font-weight: bold;
+}
