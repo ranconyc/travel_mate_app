@@ -1,4 +1,22 @@
-<h1>home</h1>
-<%= render 'shared/activity-card' %>
+<div class="banner">
+  <%= render 'shared/logo_header' %>
+  <div class="slogan">
+    <h2> Discover the world with the people around you. </h2>
+  </div>
+  <div class="img-home">
+    <%= image_tag("travelers.svg") %>
+  </div>
+  <div class="btns-home">
+    <%= link_to "Sign up", "/users/sign_up", class: "tm-btn-primery" %>
+    <%= link_to "Log in", new_user_session_path, class: "tm-btn-secondary" %>
+  </div>
+</div>
+<div class="container-mobile">
+  <div class="Recent">
+    <h2>Recent activities</h2>
+  </div>
+  <%= render 'shared/activity-card' %>
+</div>
+
 
 <%= render 'shared/bottom-navbar' %>
