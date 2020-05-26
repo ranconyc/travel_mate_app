@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :activities, dependent: :destroy
   validates :first_name, :age, :gender, presence: true
-  validates :gender, inclusion: { in: ["male", "female", "non-binary"] }
+  validates :gender, inclusion: { in: ["Male", "Female", "Non-Binary"] }
 end
 
 
