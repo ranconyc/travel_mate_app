@@ -1,12 +1,15 @@
 <%= simple_form_for(activity) do |f| %>
-  <%= f.input :title, placeholder: 'Title' %>
-  <%= f.input :date, placeholder: 'Date' %>
-  <%= f.input :description, placeholder: 'Description' %>
-  <%= f.input :category, collection: Activity::ACTIVITIES %>
-  <%= f.input :vibe, collection: Activity::VIBES %>
-  <%= f.input :group_size, placeholder: 'Group size' %>
-  <%= f.input :location %>
-  <%= f.input :ideal_member %>
-  <%= f.input :price %>
-  <%= f.button :submit, "Add", class: "tm-btn-primery" %>
+  <%= f.input :title, placeholder: 'Title', label: false %>
+  <h6 class="birth-title">Date</h6>
+  <%= f.input :date, placeholder: 'Date', label: false %>
+  <%= f.input :description, placeholder: 'Description', label: false %>
+  <h6 class="birth-title">Category</h6>
+  <%= f.input :category, collection: Activity::ACTIVITIES, label: false %>
+  <h6 class="birth-title">Vibe</h6>
+  <%= f.input :vibe, collection: Activity::VIBES, label: false %>
+  <%= f.input :group_size, placeholder: 'Group size', label: false %>
+  <%= f.input :location, placeholder: 'Location', label: false %>
+  <%= f.input :ideal_member, placeholder: 'Ideal member (optional)', label: false %>
+  <%= f.input :price, placeholder: 'Price (optional)', label: false %>
+  <%= f.button :submit, "Create", class: "tm-btn-primery form-btn" %>
 <% end %>
