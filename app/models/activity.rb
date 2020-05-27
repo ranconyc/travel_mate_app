@@ -30,3 +30,4 @@ class Activity < ApplicationRecord
     time_string.capitalize!
     time_string.gsub(/About/, '')
   end
+end
