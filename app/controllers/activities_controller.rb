@@ -15,7 +15,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params)
     @activity.user = current_user
     if @activity.save
-      redirect_to activities_path, notice: 'Activity was successfully created.'
+      redirect_to activity_path(@activity), notice: 'Activity was successfully created.'
     else
       render :new
     end

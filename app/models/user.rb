@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :interest, inclusion: { in: Activity::ACTIVITIES }, allow_nil: true
   validates :gender, inclusion: { in: GENDER }
 
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
