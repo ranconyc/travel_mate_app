@@ -4,20 +4,48 @@
   border-radius: 6px;
 }
 
-.activity-card-category-nightlife {
-  background-color: pink;
+// .activity-card-category {
+//   color: $beach-category-color;
+// }
 
-  h2.activity-card-upload-time {
-    color:
-  }
+.activity-card-category-beach {
+  color: $beach-category-color;
 }
 
-.activity-card-category-siteseeing {
-  background-color: orange;
+.activity-card-category-classes {
+  color: $classes-category-color;
+}
+
+.activity-card-category-culture {
+  color: $culture-category-color;
+}
+
+.activity-card-category-food {
+  color: $food-category-color;
 }
 
 .activity-card-category-nature {
-  background-color: green;
+  color: $nature-category-color;
+}
+
+.activity-card-category-next-destination {
+  color: $next-destination-category-color;
+}
+
+.activity-card-category-night-life {
+  color: $night-life-category-color;
+}
+
+.activity-card-category-music {
+  color: $music-category-color;
+}
+
+.activity-card-category-site-seeing {
+  color: $site-seeing-category-color;
+}
+
+.activity-card-category-sports {
+  color: $sports-category-color;
 }
 
 .test1 {
@@ -55,7 +83,7 @@
 
 .activity-card-category {
   font-size: 16px;
-  color: #5f73ff;
+  // color: #5f73ff;
   margin-bottom: 0;
   font-weight: bold;
 }
