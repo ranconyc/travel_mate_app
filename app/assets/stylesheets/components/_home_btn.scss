@@ -1,22 +1,33 @@
 .tm-btn-primery {
   display: block;
-  background: $dark-blue;
+  background: $btn-blue;
   color: $white;
   border-radius: 4px;
   padding: 10px 100px;
   text-align: center;
   margin: 0px 8px 8px;
   font-weight: bold;
+  &:hover {
+    text-decoration: none;
+    color: $white;
+    background: $blue-hover;
+  }
 }
+
 
 .tm-btn-secondary {
   display: block;
   background: $white;
-  color: $dark-blue;
-  border: 2px solid $dark-blue;
+  color: $light-blue;
+  border: 2px solid $light-blue;
   border-radius: 4px;
   padding: 8px 100px;
   text-align: center;
   margin: 0px 8px;
   font-weight: bold;
+  &:hover {
+    text-decoration: none;
+    color: $white;
+    background: $light-blue;
+  }
 }

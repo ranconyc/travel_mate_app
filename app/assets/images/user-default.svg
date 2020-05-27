@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="94px" height="94px" viewBox="0 0 94 94" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>user-solid</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="47" cy="47" r="47"></circle>
+    </defs>
+    <g id="trying-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="user-solid">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#DFE3EB" xlink:href="#path-1"></use>
+            <g mask="url(#mask-2)" fill="#26397B" fill-rule="nonzero" id="Shape">
+                <g transform="translate(7.000000, 9.000000)">
+                    <path d="M40.32,46.08 C53.046,46.08 63.36,35.766 63.36,23.04 C63.36,10.314 53.046,0 40.32,0 C27.594,0 17.28,10.314 17.28,23.04 C17.28,35.766 27.594,46.08 40.32,46.08 Z M56.448,51.84 L53.442,51.84 C49.446,53.676 45,54.72 40.32,54.72 C35.64,54.72 31.212,53.676 27.198,51.84 L24.192,51.84 C10.836,51.84 0,62.676 0,76.032 L0,83.52 C0,88.29 3.87,92.16 8.64,92.16 L72,92.16 C76.77,92.16 80.64,88.29 80.64,83.52 L80.64,76.032 C80.64,62.676 69.804,51.84 56.448,51.84 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
