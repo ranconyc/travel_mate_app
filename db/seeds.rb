@@ -156,7 +156,7 @@ ACTIVITIES = [
   # p i
   new_user.avatar.attach(io: user_avatar, filename: "user#{i+1}.jpg", content_type: 'image/jpg')
   # p new_user.avatar.attached?
-  new_user.save
+  new_user.save!
 
   activity_sample[:user] = new_user
   new_activity = Activity.new(activity_sample)
@@ -166,10 +166,10 @@ end
 all_activities = Activity.all
 # p all_activities
 
-# 10.times do
-#   new_member = Member.new(user: all_activities.sample.user, activity: all_activities.sample, status: 'accept')
-#   new_member.save!
-# end
+10.times do
+  new_member = Member.new(user: all_activities.sample.user, activity: all_activities.sample, status: 'accept')
+  new_member.save!
+end
 
 # presenter = User.new(email: 'ran@bob.bob', password: '123456', first_name: 'Ran', last_name: 'Cohen')
 # puts 'Done.'
