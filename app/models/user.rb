@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  before_create :set_default_avatar
+  # before_create :set_default_avatar
 
   GENDER = ["Male", "Female", "Non-Binary"]
   # Include default devise modules. Others available are:
