@@ -27,9 +27,11 @@ class Activity < ApplicationRecord
 
   def num_hours_ago
     time_string = time_ago_in_words(self.created_at) + " ago"
-    time_string.gsub(/About/, '').gsub(/Less than/, '').capitalize
-    # time_string
-    # time_string.gsub(/Less than/, '')
-    # time_string.capitalize!
+    if time_string.include? "about"
+      time_string.gsub!(/about/, '')
+    elsif time_string.include? "less than"
+      time_string.gsub!(/less than/, '')
+    end
+    time_string.capitalize
   end
 end
