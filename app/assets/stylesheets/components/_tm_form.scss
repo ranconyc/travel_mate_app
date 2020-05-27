@@ -1,0 +1,62 @@
+.tm-form{
+  margin: 16px 0px;
+  color: $dark-blue;
+  background-color: $white;
+  padding: 10px;
+  border-radius: 6px;
+  position: relative;
+  bottom: 45px;
+  & h1 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.user_gender legend {
+  display: none;
+}
+
+.form-check label {
+  color: $form-gray;
+}
+
+.form {
+  margin-bottom: 19px;
+}
+
+.form-login {
+  background: white;
+  padding: 5px 10px;
+  margin: 20px auto 0;
+  border-radius: 4px;
+}
+
+.h2{
+  font-size: 32px;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.form-btn {
+  width: 100%;
+  margin: 0;
+}
+
+.login-link{
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  &a {
+    color: $blue;
+  }
+}
+
+.birth-title {
+  color: $form-gray;
+  font-size: 14px;
+}

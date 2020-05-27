@@ -30,7 +30,7 @@ URLS = [
 ]
 
 puts 'Adding seed data...'
-puts 'Creating users...'
+# puts 'Creating users...'
 
 ACTIVITIES = [
   {
@@ -147,7 +147,7 @@ ACTIVITIES = [
   age = rand(18..65)
   language = LANGUAGES.sample
 
-  activity_sample = ACTIVITIES.sample
+#   activity_sample = ACTIVITIES.sample
 
   user_avatar = URI.open(URLS[i])
   new_user = User.new(email: email, password:'123456', first_name: first_name, last_name: last_name, gender: gender, age: age,
@@ -166,10 +166,10 @@ end
 all_activities = Activity.all
 # p all_activities
 
-10.times do
-  new_member = Member.new(user: all_activities.sample.user, activity: all_activities.sample, status: 'accept')
-  new_member.save!
-end
+# 10.times do
+#   new_member = Member.new(user: all_activities.sample.user, activity: all_activities.sample, status: 'accept')
+#   new_member.save!
+# end
 
 # presenter = User.new(email: 'ran@bob.bob', password: '123456', first_name: 'Ran', last_name: 'Cohen')
 # puts 'Done.'
@@ -178,5 +178,3 @@ end
 # #bikes to different users
 # #category should match bike img
 # #create rental for each user
-
-

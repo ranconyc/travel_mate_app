@@ -1,0 +1,23 @@
+.navbar-bottom {
+  background-color: #F2F2F2;
+  color: #6147ef;
+  display: flex;
+  padding: 0px 50px;
+  height: 60px;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+  i {
+    font-size: 25px;
+    padding: 0px 45px;
+  }
+}
