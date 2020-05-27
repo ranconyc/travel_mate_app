@@ -30,7 +30,7 @@ URLS = [
 ]
 
 puts 'Adding seed data...'
-# puts 'Creating users...'
+puts 'Creating users...'
 
 ACTIVITIES = [
   {
@@ -71,7 +71,7 @@ ACTIVITIES = [
     price: 100
   },
   {
-    title: 'who wants temples?',
+    title: 'temple trip?',
     date: '2020-07-17',
     description: "It's pretty far and i'm looking to split costs on the cab",
     category: 'Culture',
@@ -144,18 +144,16 @@ ACTIVITIES = [
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   gender = GENDERS.sample
-  age = rand(18..65)
+  date_of_birth = '1990-01-01'
   language = LANGUAGES.sample
 
   activity_sample = ACTIVITIES.sample
 
   user_avatar = URI.open(URLS[i])
-  new_user = User.new(email: email, password:'123456', first_name: first_name, last_name: last_name, gender: gender, age: age,
+  new_user = User.new(email: email, password:'123456', first_name: first_name, last_name: last_name, gender: gender, date_of_birth: date_of_birth,
                       location: activity_sample[:location], language: language)
 
-  # p i
   new_user.avatar.attach(io: user_avatar, filename: "user#{i+1}.jpg", content_type: 'image/jpg')
-  # p new_user.avatar.attached?
   new_user.save!
 
   activity_sample[:user] = new_user
@@ -164,7 +162,6 @@ ACTIVITIES = [
 end
 
 all_activities = Activity.all
-# p all_activities
 
 10.times do
   new_member = Member.new(user: all_activities.sample.user, activity: all_activities.sample, status: 'accept')
