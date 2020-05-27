@@ -71,7 +71,7 @@ ACTIVITIES = [
     price: 100
   },
   {
-    title: 'who wants to go to the temples?',
+    title: 'temple trip?',
     date: '2020-07-17',
     description: "It's pretty far and i'm looking to split costs on the cab",
     category: 'Culture',
@@ -147,7 +147,7 @@ ACTIVITIES = [
   age = rand(18..65)
   language = LANGUAGES.sample
 
-#   activity_sample = ACTIVITIES.sample
+  activity_sample = ACTIVITIES.sample
 
   user_avatar = URI.open(URLS[i])
   new_user = User.new(email: email, password:'123456', first_name: first_name, last_name: last_name, gender: gender, age: age,
