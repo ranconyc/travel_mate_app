@@ -1,0 +1,116 @@
+.activity-card {
+  background-color: $white;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.activity-card-category-nightlife {
+  background-color: pink;
+
+  h2.activity-card-upload-time {
+    color:
+  }
+}
+
+.activity-card-category-siteseeing {
+  background-color: orange;
+}
+
+.activity-card-category-nature {
+  background-color: green;
+}
+
+.test1 {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+}
+
+.test {
+  display: flex;
+  align-content: flex-end;
+}
+
+.avatar-category-title-date {
+  display: flex;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.activity-card-avatar {
+  border-radius: 50%;
+  width: 73px;
+  height: 73px;
+  margin-right: 15px;
+}
+
+.category-title-date {
+  width: 100%;
+}
+
+.category-upload-time {
+  display: flex;
+  justify-content: space-between !important;
+}
+
+.activity-card-category {
+  font-size: 16px;
+  color: #5f73ff;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.activity-card-upload-time {
+  font-size: 16px;
+  color: #6c7176;
+  margin-bottom: 0;
+}
+
+.activity-card-title {
+  color: black;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.activity-card-date {
+  font-size: 14px;
+  color: #6c7176;
+}
+
+.activity-card-description {
+  color: #6c7176;
+  height: 100px;
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+.activity-card-capacity {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+  color: #6c7176;
+}
+
+.activity-card-capacity > p {
+  margin-bottom: 5px;
+}
+
+.activity-card-btn-join {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: $white;
+  background-color: $blue;
+  border-radius: $border-radius;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 100%;
+
+  &:hover {
+  text-decoration: none;
+  color: $white;
+  background-color: #4d61f0;
+  }
+}
