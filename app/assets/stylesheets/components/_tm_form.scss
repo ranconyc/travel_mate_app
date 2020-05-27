@@ -37,6 +37,8 @@
 }
 
 .form-title {
+  margin-top: 22px;
+  margin-bottom: 30px;
   text-align: center;
   font-size: 26px;
   font-weight: bold;
@@ -59,4 +61,30 @@
 .birth-title {
   color: $form-gray;
   font-size: 14px;
+}
+
+.divider {
+  height: 1px;
+  background-color: $gray;
+}
+
+.have-account {
+  margin-top: 10px;
+  margin-bottom: 11px;
+  font-weight: bold;
+  font-size: 14px;
+  color: $black;
+  text-align: center;
+}
+
+.forgot {
+  margin-top: 10px;
+  margin-bottom: 11px;
+  font-size: 14px;
+  color: $blue;
+  text-align: center;
+}
+
+#user_age_1i {
+  padding-right: 0;
 }

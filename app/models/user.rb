@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many_attached :photos
   has_many :activities, dependent: :destroy
 
-  validates :first_name, :age, :gender, presence: true
+  validates :first_name, :date_of_birth, :gender, presence: true
   validates :interest, inclusion: { in: Activity::ACTIVITIES }, allow_nil: true
   validates :gender, inclusion: { in: GENDER }
 
