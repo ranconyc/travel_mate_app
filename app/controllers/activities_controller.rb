@@ -1,5 +1,4 @@
 class ActivitiesController < ApplicationController
-
   def index
     @activities = Activity.all
   end
@@ -27,5 +26,4 @@ class ActivitiesController < ApplicationController
   def activity_params
     params.require(:activity).permit(:title, :date, :description, :category, :vibe, :group_size, :location, :ideal_member, :price)
   end
-
 end

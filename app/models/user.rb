@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :activities, dependent: :destroy
 
   validates :first_name, :age, :gender, presence: true
-  validates :interest, inclusion: { in: Activity::ACTIVITIES }
+  validates :interest, inclusion: { in: Activity::ACTIVITIES }, allow_nil: true
   validates :gender, inclusion: { in: GENDER }
 
   devise :database_authenticatable, :registerable,

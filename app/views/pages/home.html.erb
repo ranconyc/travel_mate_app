@@ -15,7 +15,9 @@
   <div class="Recent">
     <h2>Recent activities</h2>
   </div>
-  <%= render 'shared/activity-card' %>
+    <% @activities.each do |single_activity| %>
+      <%= render 'shared/activity-card', activity: single_activity %>
+    <% end %>
 </div>
 
 
