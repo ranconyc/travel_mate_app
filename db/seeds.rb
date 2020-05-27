@@ -71,7 +71,7 @@ ACTIVITIES = [
     price: 100
   },
   {
-    title: 'who wants temples?',
+    title: 'temple trip?',
     date: '2020-07-17',
     description: "It's pretty far and i'm looking to split costs on the cab",
     category: 'Culture',

@@ -10,7 +10,11 @@
   font-size: 32px;
   color: $white;
   text-align: center;
-  padding-top: 22px
+  padding-top: 22px;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .header-md {
