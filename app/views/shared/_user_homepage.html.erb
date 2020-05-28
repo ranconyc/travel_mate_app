@@ -1,0 +1,29 @@
+<div class="header-searchbar">
+  <%= render 'shared/logo_header', text: 'Find travel plans near you', logo_class: 'header-homepage' %>
+  <div class="search-bar">
+    <div class="search-btn"><i class="fas fa-search"></i></div>
+  </div>
+</div>
+
+<div class="category-scroll">
+    <div class="cat-card beach-cat">Beach</div>
+    <div class="cat-card classes-cat">Classes</div>
+    <div class="cat-card culture-cat">Culture</div>
+    <div class="cat-card food-cat">Food</div>
+    <div class="cat-card nature-cat">Nature</div>
+    <div class="cat-card next-cat">Next Destination</div>
+    <div class="cat-card night-cat">Night Life</div>
+    <div class="cat-card music-cat">Music</div>
+    <div class="cat-card site-see-cat">Site Seeing</div>
+    <div class="cat-card sports-cat">Sports</div>
+  </div>
+<div class="page-container">
+  <div class="container-mobile">
+    <div class="Recent">
+      <h2>Recent activities</h2>
+    </div>
+      <% @activities.each do |single_activity| %>
+        <%= render 'shared/activity-card', activity: single_activity %>
+      <% end %>
+  </div>
+</div>
