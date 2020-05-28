@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :activities, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
       resources :members, only: [:index, :show, :new, :create, :edit, :update, :destroy]
     end
+      resources :users, only: [:show]
 end
