@@ -6,14 +6,14 @@
   margin-bottom: 14px;
 }
 
-.activity-info p {
+.show-info p {
   color: $black;
   margin-top: 14px;
   margin-bottom: 14px;
 }
 
 .info-paragraph i {
-     margin-right: 10px;
+  margin-right: 10px;
   }
 
 .owner-content h1 {
@@ -23,4 +23,22 @@
 
 .owner-title {
   color: $ligth-black;
+}
+
+.activity-date-center {
+  text-align: center;
+  font-size: 14px;
+}
+
+.back-category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 15px;
+  margin-left: 15px;
+  padding-top: 15px;
+  & a, i {
+    font-size: 20px;
+    color: $white;
+  }
 }
