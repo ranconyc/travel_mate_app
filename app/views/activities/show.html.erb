@@ -1,14 +1,14 @@
 <div class="tm-show-page">
   <div class="header header-xl">
     <div class="back-category">
-      <%= link_to  :back do %>
+      <%= link_to  "/" do %>
         <i class="fas fa-chevron-left"></i>
       <% end %>
       <span class="activity-category"> <%= @activity.category %> </span>
     </div>
     <h4 class="activity-date-center"><%= @activity.date %></h4>
     <h1 class="logo"><%= @activity.title.capitalize %></h1>
-    <p> <%= @activity.group_size - Member.count %> spots left </p>
+    <p> <%= (@activity.group_size - Member.count ) %> spots left </p>
 
   </div>
   <div class="container-sm">
