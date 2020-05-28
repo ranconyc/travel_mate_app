@@ -145,7 +145,7 @@ ACTIVITIES = [
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   gender = GENDERS.sample
-  date_of_birth = Faker::Date.in_date_period
+  date_of_birth = Faker::Date.in_date_period(year: 1993)
   language = LANGUAGES.sample
 
   activity_sample = ACTIVITIES.sample
