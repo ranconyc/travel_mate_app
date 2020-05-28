@@ -3,3 +3,12 @@
   font-size: 36px;
   color: $white;
 }
+
+.user-profile-pic img {
+  margin: auto;
+  margin-bottom: 12px;
+  height: 94px;
+  width: 94px;
+  border: 2px solid $white;
+  border-radius: 50%;
+}

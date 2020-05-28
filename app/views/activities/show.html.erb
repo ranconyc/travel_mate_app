@@ -1,7 +1,7 @@
 <div class="tm-show-page">
   <div class="header header-xl">
     <div class="back-category">
-      <%= link_to  "/" do %>
+      <%= link_to  :back do %>
         <i class="fas fa-chevron-left"></i>
       <% end %>
       <span class="activity-category"> <%= @activity.category %> </span>
@@ -12,15 +12,16 @@
 
   </div>
   <div class="container-sm">
-  <div class="owner-content">
-    <div class="avatar">
-
-    </div>
-    <div class="owner-info box-background">
-      <h1 class="owner-name"> <%= @activity.user.first_name %> <%= @activity.user.last_name %></h1>
-      <h1 class="owner-title">Owner</h1>
-    </div>
-  </div>
+    <%= link_to user_path(@activity.user) do %>
+      <div class="owner-info box-background">
+        <div class="activity-owner-pic" style="background-image: url('<%= cl_image_path @activity.user.avatar.key, gravity: "faces", height: 73, width: 73, crop: :fill %>')">
+        <div class="owner-text">
+          <h1 class="owner-name"> <%= @activity.user.first_name %> <%= @activity.user.last_name %></h1>
+          <h1 class="owner-title">Owner</h1>
+        </div>
+        </div>
+      </div>
+    <% end %>
     <div class="show-info box-background">
       <p class="info-paragraph"><%= @activity.description %> <%= @activity.ideal_member %></p>
       <div class="divider"></div>
@@ -34,4 +35,5 @@
     </div>
   </div>
 </div>
+
 
