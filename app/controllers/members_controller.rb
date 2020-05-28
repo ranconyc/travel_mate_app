@@ -1,18 +1,14 @@
 class MembersController < ApplicationController
   def create
-    @member = Member.new(member_params)
+    @member = Member.new
     @member.user = current_user
-    @activity = @member.activity
+    @activity = Activity.find(params[:activity_id])
+    @member.activity = @activity
+    @member.save!
     if @member.save
       redirect_to activity_path(@activity), notice: 'Member was successfully created.'
     else
-      render '/'
+      render 'activities/show'
     end
-  end
-
-  private
-
-  def member_params
-    params.require(:member).permit(:activity)
   end
 end
