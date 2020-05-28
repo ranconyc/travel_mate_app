@@ -1,0 +1,31 @@
+<div class="activity-show-page">
+  <div class="header header-xl">
+    <i class="fas fa-chevron-left"></i>
+    <%= @activity.category %>
+    <%= @activity.date %>
+    <h1 class="logo"><%= @activity.title %></h1>
+    <p> <%= @activity.group_size - Member.count %> spots left </p>
+
+  </div>
+  <div class="container-sm">
+  <div class="owner-content">
+    <div class="avatar">
+
+    </div>
+    <div class="owner-info box-background">
+      <h1 class="owner-name"> <%= @activity.user.first_name %> <%= @activity.user.last_name %></h1>
+      <h1 class="owner-title">Owner</h1>
+    </div>
+  </div>
+    <div class="activity-info box-background">
+      <p class="info-paragraph"><%= @activity.description %> <%= @activity.ideal_member %></p>
+      <div class="divider"></div>
+      <p class="info-paragraph"><i class="fas fa-map-marker-alt"></i><%= @activity.location %></p>
+      <div class="divider"></div>
+      <p class="info-paragraph"><i class="fas fa-dollar-sign"></i><%= @activity.price %></p>
+      <div class="divider"></div>
+      <p class="info-paragraph"><i class="fas fa-users"></i><%= @activity.group_size %> / <%= (@activity.group_size - Member.count) %> spots left </p>
+    </div>
+  </div>
+</div>
+
