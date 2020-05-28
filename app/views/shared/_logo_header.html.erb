@@ -1,5 +1,9 @@
 <%= link_to "/" do %>
- <div class="header">
+ <div class="header <%= logo_class if defined?(logo_class) %>">
+  <% unless defined?(text) %>
     <h1 class="logo"><strong>Travel</strong>Mate</h1>
+  <% else %>
+    <h1 class="logo"><%= text %></h1>
+  <% end %>
  </div>
 <% end %>

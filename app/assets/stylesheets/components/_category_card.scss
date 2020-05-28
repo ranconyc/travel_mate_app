@@ -1,0 +1,65 @@
+.category-scroll {
+  overflow: auto;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 16px;
+  margin-top: 22px;
+}
+
+.cat-card {
+  height: 62px;
+  width: 150px;
+  margin: 5px 5px 0px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  font-family: "Roboto", "Helvetica", "sans-serif";
+  font-size: 25px;
+  font-weight: bolder;
+  flex-shrink: 0;
+  line-height: normal;
+  text-align: center;
+}
+
+.beach-cat {
+  background-color: $beach-category-color;
+}
+
+.classes-cat {
+  background-color: $classes-category-color;
+}
+
+.culture-cat {
+  background-color: $culture-category-color;
+}
+
+.food-cat {
+  background-color: $food-category-color;
+}
+
+.nature-cat {
+  background-color: $nature-category-color;
+}
+
+.next-cat {
+  background-color: $next-destination-category-color;
+}
+
+.night-cat {
+  background-color: $night-life-category-color;
+}
+
+.music-cat {
+  background-color: $music-category-color;
+}
+
+.site-see-cat {
+  background-color: $site-seeing-category-color;
+}
+
+.sports-cat {
+  background-color: $sports-category-color;
+}
