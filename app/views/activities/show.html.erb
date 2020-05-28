@@ -29,7 +29,8 @@
       <p class="info-paragraph"><i class="fas fa-dollar-sign"></i><%= @activity.price %></p>
       <div class="divider"></div>
       <p class="info-paragraph"><i class="fas fa-users"></i><%= @activity.group_size %> / <%= (@activity.group_size - Member.count) %> spots left </p>
-      <a href="#" class="activity-card-btn-join">Join</a>
+      <!-- <a href="#" class="activity-card-btn-join">Join</a> -->
+      <%= link_to "Join", activity_members_path(@activity), method: :post, class: "activity-card-btn-join" %>
     </div>
   </div>
 </div>
