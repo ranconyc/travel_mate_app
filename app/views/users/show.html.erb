@@ -1,7 +1,11 @@
 <div class="tm-show-page">
   <div class="header header-xl">
-    <i class="fas fa-chevron-left"></i>
-    <div class="user-profile-pic"></div>
+    <div class="back-category">
+      <%= link_to :back do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+    </div>
+    <div class="user-profile-pic"> <%= cl_image_tag @user.avatar.key, gravity: "faces", height: 73, width: 73, crop: :fill %> </div>
     <h1 lass="user-title"> <%= @user.first_name %> <%= @user.last_name %></h1>
   </div>
   <div class="container-sm">
