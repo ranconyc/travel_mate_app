@@ -4,6 +4,7 @@
       <%= link_to :back do %>
         <i class="fas fa-chevron-left"></i>
       <% end %>
+      <span class="edit-profile"> <i class="far fa-edit"></i> </span>
     </div>
     <div class="user-profile-pic"> <%= cl_image_tag @user.avatar.key, gravity: "faces", height: 73, width: 73, crop: :fill %> </div>
     <h1 lass="user-title"> <%= @user.first_name %> <%= @user.last_name %></h1>

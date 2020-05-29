@@ -11,4 +11,8 @@ class MembersController < ApplicationController
       render 'activities/show'
     end
   end
+
+  def destroy
+
+  end
 end
