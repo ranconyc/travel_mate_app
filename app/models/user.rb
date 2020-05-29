@@ -1,5 +1,7 @@
+require "open-uri"
+
 class User < ApplicationRecord
-  # before_create :set_default_avatar
+  before_create :set_default_avatar
 
   GENDER = ["Male", "Female", "Non-Binary"]
   # Include default devise modules. Others available are:
@@ -17,6 +19,8 @@ class User < ApplicationRecord
 
   def set_default_avatar
     default_avatar = URI.open("https://res.cloudinary.com/dlr2wvlnj/image/upload/v1590592032/default_avatar_nxiuyf.png")
-    self.avatar.attach(io: default_avatar, filename: "default_avatar.png", content_type: 'image/png')
+    unless self.avatar.attached?
+      self.avatar.attach(io: default_avatar, filename: "default_avatar.png", content_type: 'image/png')
+    end
   end
 end
