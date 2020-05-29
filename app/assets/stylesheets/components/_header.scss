@@ -29,6 +29,13 @@ a:hover {
 
 .header-homepage {
   height: 137px;
-  padding: 16px;
+  padding: 0 16px 35px;
   margin-bottom: -35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-homepage h1 {
+  padding-top: 5px;
 }
