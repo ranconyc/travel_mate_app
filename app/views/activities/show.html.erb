@@ -41,23 +41,17 @@
       <div class="divider"></div>
       <p class="info-paragraph"><i class="fas fa-map-marker-alt"></i><%= @activity.location %></p>
       <div class="divider"></div>
-      <p class="info-paragraph"><i class="fas fa-dollar-sign"></i><%= @activity.price %></p>
+      <p class="info-paragraph">
+        <i class="fas fa-dollar-sign"></i>
+        <% if @activity.price == 0 %>
+          <%= 'Free' %>
+        <% else %>
+          <%= @activity.price %>
+        <% end %>
+      </p>
       <div class="divider"></div>
       <p class="info-paragraph"><i class="fas fa-users"></i><%= @activity.group_size %> / <%= (@activity.group_size - @activity.members.count) %> spots left </p>
       <!-- <a href="#" class="activity-card-btn-join">Join</a> -->
-     <% @activity.members.each do |member| %>
-       <% if member.user == current_user %>
-        <% doesExist = true %>
-       <% else %>
-        <% doesExist = false %>
-       <% end %>
-     <% end %>
-
-     <% if doesExist %>
-      <%= link_to "Leave", activity_members_path(@activity), method: :delete, class: "activity-card-btn-join" %>
-     <% else %>
-      <%= link_to "Join", activity_members_path(@activity), method: :post, class: "activity-card-btn-join" %>
-     <% end %>
     </div>
   </div>
 </div>
