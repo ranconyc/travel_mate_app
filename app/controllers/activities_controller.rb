@@ -13,6 +13,9 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new(activity_params)
+    if @activity.price == nil
+      @activity.price = 0
+    end
     @activity.user = current_user
     if @activity.save
       redirect_to activity_path(@activity), notice: 'Activity was successfully created.'
