@@ -1,10 +1,21 @@
 <div class="navbar-bottom">
   <div class="nav-links">
+
     <i class="far fa-envelope"></i>
-    <i class="fas fa-home"></i>
-    <i class="fas fa-plus-circle"></i>
+
+    <%= link_to root_path do %>
+      <i class="fas fa-home"></i>
+    <% end %>
+
+    <%= link_to new_activity_path(@activity) do %>
+      <i class="fas fa-plus-circle"></i>
+    <% end %>
+
     <i class="fas fa-search"></i>
+
+  <%= link_to user_path(current_user) do %>
     <i class="fas fa-user-circle"></i>
+  <% end %>
 
     <%= link_to "Log out", destroy_user_session_path, method: :delete %>
   </div>
