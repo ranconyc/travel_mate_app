@@ -1,20 +1,34 @@
 <div class="tm-show-page">
   <div class="header header-xl">
     <div class="back-category">
-      <%= link_to  :back do %>
+      <%= link_to  "/" do %>
         <i class="fas fa-chevron-left"></i>
       <% end %>
       <span class="activity-category"> <%= @activity.category %> </span>
     </div>
     <h4 class="activity-date-center"><%= @activity.date %></h4>
-    <h1 class="logo"><%= @activity.title.capitalize %></h1>
-    <p> <%= @activity.group_size - Member.count %> spots left </p>
+    <h1 class="activity-title"><%= @activity.title.capitalize %></h1>
+
+
+    <ul class="avatars-row-widget">
+      <li class="avatar-item">
+        <div class="activity-show-avatar" style="background-image: url('<%= cl_image_path @activity.user.avatar.key, gravity: "face", height: 50, width: 50, crop: :fill %>')"></div>
+      </li>
+    <% @activity.members.each do |member| %>
+    <li class="avatar-item">
+      <div class="activity-show-avatar" style="background-image: url('<%= cl_image_path member.user.avatar.key, gravity: "face", height: 50, width: 50, crop: :fill %>')"></div>
+    </li>
+    <% end %>
+    </ul>
+
+
+    <p> <%= ( @activity.group_size - @activity.members.count ) %> spots left </p>
 
   </div>
   <div class="container-sm">
     <%= link_to user_path(@activity.user) do %>
       <div class="owner-info box-background">
-        <div class="activity-owner-pic" style="background-image: url('<%= cl_image_path @activity.user.avatar.key, gravity: "faces", height: 73, width: 73, crop: :fill %>')">
+        <div class="activity-owner-pic" style="background-image: url('<%= cl_image_path @activity.user.avatar.key, gravity: "face", height: 40, width: 40, crop: :fill %>')">
         <div class="owner-text">
           <h1 class="owner-name"> <%= @activity.user.first_name %> <%= @activity.user.last_name %></h1>
           <h1 class="owner-title">Owner</h1>
@@ -29,9 +43,21 @@
       <div class="divider"></div>
       <p class="info-paragraph"><i class="fas fa-dollar-sign"></i><%= @activity.price %></p>
       <div class="divider"></div>
-      <p class="info-paragraph"><i class="fas fa-users"></i><%= @activity.group_size %> / <%= (@activity.group_size - Member.count) %> spots left </p>
+      <p class="info-paragraph"><i class="fas fa-users"></i><%= @activity.group_size %> / <%= (@activity.group_size - @activity.members.count) %> spots left </p>
       <!-- <a href="#" class="activity-card-btn-join">Join</a> -->
+     <% @activity.members.each do |member| %>
+       <% if member.user == current_user %>
+        <% doesExist = true %>
+       <% else %>
+        <% doesExist = false %>
+       <% end %>
+     <% end %>
+
+     <% if doesExist %>
+      <%= link_to "Leave", activity_members_path(@activity), method: :delete, class: "activity-card-btn-join" %>
+     <% else %>
       <%= link_to "Join", activity_members_path(@activity), method: :post, class: "activity-card-btn-join" %>
+     <% end %>
     </div>
   </div>
 </div>
