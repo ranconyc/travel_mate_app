@@ -26,28 +26,49 @@ ul.avatars-row-widget {
   margin: auto;
   padding: 0;
   z-index: 1;
+  margin-bottom: 12px;
 }
 
 ul.avatar-item {
+  width: 42px;
   height: 49px;
   margin: 0;
   padding: 0;
   position: relative;
-  width: 42px;
 }
 
-.avatar-item .activity-card-avatar {
+.owner-avatar {
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 42px;
+  height: 49px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+}
+
+.activity-show-avatar {
+    border-radius: 50%;
+    min-width: 50px;
+    max-width: 50px;
+    min-height: 50px;
+    max-height: 50px;
+}
+
+.avatar-item .activity-show-avatar{
   margin-right: 0px;
   margin-left: -14px;
-  border: 3px solid white;
+  border: 2px solid white;
 }
 
-li.avatar-item:nth-child(1) { z-index: 9; }
-li.avatar-item:nth-child(2) { z-index: 8; }
-li.avatar-item:nth-child(3) { z-index: 7; }
-li.avatar-item:nth-child(4) { z-index: 6; }
-li.avatar-item:nth-child(5) { z-index: 5; }
-li.avatar-item:nth-child(6) { z-index: 4; }
-li.avatar-item:nth-child(7) { z-index: 3; }
-li.avatar-item:nth-child(8) { z-index: 2; }
-li.avatar-item:nth-child(9) { z-index: 1; }
+li.avatar-item:nth-child(1) { z-index: 10; }
+li.avatar-item:nth-child(2) { z-index: 9; }
+li.avatar-item:nth-child(3) { z-index: 8; }
+li.avatar-item:nth-child(4) { z-index: 7; }
+li.avatar-item:nth-child(5) { z-index: 6; }
+li.avatar-item:nth-child(6) { z-index: 5; }
+li.avatar-item:nth-child(7) { z-index: 4; }
+li.avatar-item:nth-child(8) { z-index: 3; }
+li.avatar-item:nth-child(9) { z-index: 2; }
+li.avatar-item:nth-child(10) { z-index: 1; }

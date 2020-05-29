@@ -26,7 +26,7 @@
                         :order => [ :day, :month, :year], required: true, label: false %>
             <%= f.input :gender, as: :radio_buttons, collection:["Male", "Female", "Non-Binary"], wrapper: :vertical_collection_inline %>
             <h6 class="birth-title">Profile picture</h6>
-            <%= f.input :photo, as: :file, label: false %>
+            <%= f.input :avatar, as: :file, label: false %>
           </div>
 
           <div class="form-actions">
@@ -41,4 +41,3 @@
       </div>
     </div>
   </div>
-
