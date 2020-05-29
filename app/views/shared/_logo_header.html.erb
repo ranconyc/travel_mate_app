@@ -3,7 +3,7 @@
   <% unless defined?(text) %>
     <h1 class="logo"><strong>Travel</strong>Mate</h1>
   <% else %>
-    <h1 class="logo"><%= text %></h1>
+    <h1 class="logo"><%= raw(text) %></h1>
   <% end %>
  </div>
 <% end %>
