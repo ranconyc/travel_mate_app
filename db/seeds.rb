@@ -140,10 +140,6 @@ ACTIVITIES = [
 #   new_bike.photos.attach(io:BIKE_PHOTOS[bike[:category]], filename: "bike#{i}.png", content_type: 'image/png')
 # end
 
-def age_fn(dob)
-  now = Time.now.utc.to_date
-  now.year - dob.year - ((now.month > dob.month || (now.month == dob.month && now.day >= dob.day)) ? 0 : 1)
-end
 
 10.times do |i|
   p i
@@ -152,14 +148,13 @@ end
   last_name = Faker::Name.last_name
   gender = GENDERS.sample
   date_of_birth = Faker::Date.in_date_period(year: 1950 + (0..52).to_a.sample)
-  age = age_fn(date_of_birth)
   language = LANGUAGES.sample
 
   activity_sample = ACTIVITIES.sample
 
   user_avatar = URI.open(URLS[i])
   new_user = User.new(email: email, password:'123456', first_name: first_name, last_name: last_name, gender: gender, date_of_birth: date_of_birth,
-                      location: activity_sample[:location], age: age, language: language)
+                      location: activity_sample[:location], language: language)
 
   new_user.avatar.attach(io: user_avatar, filename: "user#{i+1}.jpg", content_type: 'image/jpg')
   new_user.save!
