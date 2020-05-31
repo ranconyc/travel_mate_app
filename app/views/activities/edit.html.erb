@@ -1,0 +1,15 @@
+<div class="form-page">
+  <div class="header header-md header-update">
+    <div class="back-category">
+      <%= link_to :back do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+    </div>
+    <h1 class="logo"><strong>Update Activity</strong></h1>
+  </div>
+  <div class="container-sm">
+    <div class="tm-form">
+      <%= render "form", activity: @activity %>
+    </div>
+  </div>
+</div>

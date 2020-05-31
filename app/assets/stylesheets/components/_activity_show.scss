@@ -21,3 +21,39 @@
   border-radius: 50%;
   margin-right: 14px;
 }
+
+.activity-edit-delete-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-activity-edit, .btn-activity-delete {
+  color: $white;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 49%;
+  border-radius: 6px;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.btn-activity-edit {
+  background-color: #1b2270;
+
+  &:hover {
+    background-color: #141945;
+  }
+}
+
+.btn-activity-delete {
+  background-color: red;
+
+  &:hover {
+    background-color: #9e181a;
+  }
+}
