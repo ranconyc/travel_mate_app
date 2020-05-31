@@ -1,15 +1,16 @@
 .category-scroll {
   overflow: auto;
-  height: 75px;
+  height: 55px;
   display: flex;
   flex-direction: row;
   margin-left: 16px;
   margin-right: 16px;
-  margin-top: 22px;
+  margin-top: 14px;
 }
 
 .cat-card {
-  height: 62px;
+  color: $white;
+  height: 50px;
   width: 150px;
   margin: 5px 5px 0px 5px;
   display: flex;
@@ -17,8 +18,8 @@
   align-items: center;
   border-radius: 6px;
   font-family: "Roboto", "Helvetica", "sans-serif";
-  font-size: 19px;
-  font-weight: bolder;
+  font-size: 18px;
+  font-weight: bold;
   flex-shrink: 0;
   line-height: normal;
   text-align: center;
