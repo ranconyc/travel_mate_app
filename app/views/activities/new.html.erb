@@ -1,7 +1,12 @@
 <div class="form-page">
   <div class="header header-md">
+    <div class="back-category">
+      <%= link_to :back do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+    </div>
     <h1 class="logo"><strong>New Activity</strong></h1>
-</div>
+  </div>
   <div class="container-sm">
     <div class="tm-form">
       <%= render "form", activity: @activity %>

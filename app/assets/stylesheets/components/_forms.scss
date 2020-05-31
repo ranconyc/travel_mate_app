@@ -1,0 +1,13 @@
+.user-edit-wrapper .info-paragraph {
+  display: flex;
+  align-items: center;
+
+  .form-group {
+    flex-grow: 1;
+    margin-top: 1rem;
+  }
+  i {
+    color: black;
+    font-size: 25px;
+  }
+}

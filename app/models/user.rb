@@ -8,6 +8,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_one_attached :avatar
   has_many :activities, dependent: :destroy
+  has_many :user_languages, dependent: :destroy
+  has_many :languages, through: :user_languages
 
   validates :first_name, :date_of_birth, :gender, presence: true
   validates :interest, inclusion: { in: Activity::ACTIVITIES }, allow_nil: true
@@ -22,5 +24,15 @@ class User < ApplicationRecord
     unless self.avatar.attached?
       self.avatar.attach(io: default_avatar, filename: "default_avatar.png", content_type: 'image/png')
     end
+  end
+
+  def age
+    now = Time.now.utc.to_date
+    dob = date_of_birth
+
+    is_later_month = (now.month > dob.month ||
+      (now.month == dob.month && now.day >= dob.day))
+
+    now.year - dob.year - (is_later_month ? 0 : 1)
   end
 end

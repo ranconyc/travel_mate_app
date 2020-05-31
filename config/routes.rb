@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
   get 'dashboard', to: 'pages#dashboard'
-  resources :activities, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
-    resources :members, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :activities do
+    resources :members, only: [:create]
   end
-  resources :users, only: [:show]
+  resources :members, only: :destroy
+  resources :users, only: [:show, :edit, :update]
 end
