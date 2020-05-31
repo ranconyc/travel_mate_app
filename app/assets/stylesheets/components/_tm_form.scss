@@ -88,3 +88,11 @@
 #user_age_1i {
   padding-right: 0;
 }
+
+.full-name {
+  display: flex;
+  justify-content: space-between;
+  & input {
+    width: 100px;
+  }
+}
