@@ -5,6 +5,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @member = Member.find_by(activity: @activity, user: current_user)
   end
 
   def new
