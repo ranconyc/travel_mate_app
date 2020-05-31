@@ -52,10 +52,17 @@
       <div class="divider"></div>
       <p class="info-paragraph"><i class="fas fa-users"></i><%= @activity.group_size %> / <%= (@activity.group_size - @activity.members.count) %> spots left </p>
 
-      <% if @activity.member?(current_user) %>
-        <%= link_to "Leave",  member_path(@member) , method: :delete, remote: true, class: "activity-card-btn-join" %>
+      <% if @activity.user_id == current_user.id %>
+        <div class="activity-edit-delete-btns">
+          <%= link_to "Edit", edit_activity_path, class: "btn-activity-edit" %>
+          <%= link_to "Delete", activity_path, method: :delete, class: "btn-activity-delete" %>
+        </div>
       <% else %>
-        <%= link_to "Join",  activity_members_path(@activity) , method: :post, remote: true, class: "activity-card-btn-join" %>
+        <% if @activity.member?(current_user) %>
+          <%= link_to "Leave",  member_path(@member) , method: :delete, remote: true, class: "activity-card-btn-join" %>
+        <% else %>
+          <%= link_to "Join",  activity_members_path(@activity) , method: :post, remote: true, class: "activity-card-btn-join" %>
+        <% end %>
       <% end %>
     </div>
   </div>
