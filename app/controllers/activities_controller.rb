@@ -14,7 +14,7 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new(activity_params)
-    if @activity.price == nil
+    if @activity.price.nil?
       @activity.price = 0
     end
     @activity.user = current_user

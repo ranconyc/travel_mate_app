@@ -1,5 +1,9 @@
 <div class="board">
-  <% @my_activities.each do |activity| %>
-    <%= render 'shared/activity-card', activity: activity %>
+  <% if !@my_activities.empty? %>
+    <% @my_activities.each do |activity| %>
+      <%= render 'shared/activity-card', activity: activity %>
+    <% end %>
+  <% else %>
+    <h2 id="msg-no-requests">You don't have any activities!</h2>
   <% end %>
 </div>
