@@ -9,7 +9,7 @@
       <% end %>
     </div>
     <div class="user-profile-pic"> <%= cl_image_tag @user.avatar.key, gravity: "faces", height: 73, width: 73, crop: :fill %> </div>
-    <h1 lass="user-title"> <%= @user.first_name %> <%= @user.last_name %></h1>
+    <h1 lass="user-title"> <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></h1>
   </div>
   <div class="container-sm">
     <div class="show-info box-background">
@@ -21,10 +21,18 @@
       <div class="divider"></div>
       <p class="info-paragraph"><i class="fas fa-home"></i> <%= @user.hometown %> </p>
       <div class="divider"></div>
-      <p class="info-paragraph"><i class="fas fa-language"></i><%= @user.language %></p>
+      <p class="info-paragraph"><i class="fas fa-language"></i>
+        <% @user.languages.each do |language| %>
+        <%= language.name %>
+        <% end %>
+      </p>
       <div class="divider"></div>
       <p class="info-paragraph"><i class="fas fa-venus-mars"></i><%= @user.gender %></p>
-      <a href="#" class="activity-card-btn-join">Buddy Us</a>
+      <% if current_user %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "activity-card-btn-join" %>
+      <% else %>
+        <%= link_to "buddy Us", destroy_user_session_path, class: "activity-card-btn-join" %>
+      <% end %>
     </div>
   </div>
 </div>

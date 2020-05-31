@@ -1,3 +1,4 @@
+<% raise %>
 <% @my_activities.each do |activity| %>
   <% res = activity.members.all? { |member| member.status == "accept" } %>
   <div class="board">
