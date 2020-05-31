@@ -8,8 +8,8 @@
 
           <div class="form-inputs">
             <div class="full-name">
-              <%= f.input :first_name, label: false, placeholder: 'First name' %>
-              <%= f.input :last_name, label: false, placeholder: 'Last name' %>
+              <span class="first-name"><%= f.input :first_name, label: false, placeholder: 'First name' %></span>
+              <span class="last-name"><%= f.input :last_name, label: false, placeholder: 'Last name' %></span>
             </div>
             <%= f.input :email,
                         required: true,
