@@ -1,0 +1,12 @@
+<% @my_activities.each do |activity| %>
+  <% res = activity.members.all? { |member| member.status == "accept" } %>
+  <div class="board">
+    <% if res %>
+      <h2 id="msg-no-requests">No pending requests!</h2>
+    <% else %>
+      <% activity.members.each do |member| %>
+        <%= render 'shared/request-card', activity: activity, member: member %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

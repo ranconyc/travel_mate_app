@@ -128,17 +128,6 @@ ACTIVITIES = [
   }
 ]
 
-# BIKE_PHOTOS = {
-#   'BMX Bike': URI.open('https://i1.adis.ws/i/washford/143184/X-Rated-Exile-BMX--Bike---24-Wheel.webp?$sfcc_tile$&w=456'),
-#   'City Bike': URI.open('https://cdn.webshopapp.com/shops/212063/files/126309038/6ku-odessa-8spd-city-bike-pershing-gold.jpg'),
-#   'Electric Bike': URI.open('https://img.gkbcdn.com/s3/p/2019-10-23/onebot-s6-folding-electric-bike-250w-motor-max-25km-h-orange-1574132777187.jpg')
-# }
-
-# BIKES = BIKES.map do |bike|
-#   new_bike = Bike.new(bike)
-#   new_bike.photos.attach(io:BIKE_PHOTOS[bike[:category]], filename: "bike#{i}.png", content_type: 'image/png')
-# end
-
 10.times do |i|
   p i
   email = Faker::Internet.email
@@ -165,14 +154,6 @@ end
 all_activities = Activity.all
 
 10.times do
-  new_member = Member.new(user: all_activities.sample.user, activity: all_activities.sample, status: 'accept')
+  new_member = Member.new(user: all_activities.sample.user, activity: all_activities.sample, status: 'pending')
   new_member.save!
 end
-
-# presenter = User.new(email: 'ran@bob.bob', password: '123456', first_name: 'Ran', last_name: 'Cohen')
-# puts 'Done.'
-
-# #BIKE_CATEGORIES
-# #bikes to different users
-# #category should match bike img
-# #create rental for each user
