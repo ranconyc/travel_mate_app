@@ -7,8 +7,10 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :first_name, label: false, placeholder: 'First name' %>
-            <%= f.input :last_name, label: false, placeholder: 'Last name' %>
+            <div class="full-name">
+              <span class="first-name"><%= f.input :first_name, label: false, placeholder: 'First name' %></span>
+              <span class="last-name"><%= f.input :last_name, label: false, placeholder: 'Last name' %></span>
+            </div>
             <%= f.input :email,
                         required: true,
                         autofocus: true,

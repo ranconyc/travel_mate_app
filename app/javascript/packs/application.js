@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+// External imports
 import "bootstrap";
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -17,11 +18,25 @@ import "bootstrap";
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-// notice fade
-  $(document).ready(function(){
-    setTimeout(function(){
-      $('#notice-wrapper').fadeOut("slow", function() {
-        $(this).remove();
-      })
-    }, 3500);
-  });
+// ----------------------------------------------------
+// Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
+// WRITE YOUR OWN JS STARTING FROM HERE 👇
+// ----------------------------------------------------
+
+// Internal imports, e.g:
+// import { initSelect2 } from '../components/init_select2';
+import { initFlashMessageAnimate } from '../plugins/flash_message_animate'
+
+document.addEventListener('turbolinks:load', () => {
+  // Call your functions here, e.g:
+  // initSelect2();
+  initFlashMessageAnimate()
+});
+
+
+
+
+
+
+
+

@@ -88,3 +88,31 @@
 #user_age_1i {
   padding-right: 0;
 }
+
+.full-name {
+  display: flex;
+  justify-content: space-between;
+} 
+
+.last-name {
+  width: calc(100% / 2);
+  margin-left: 5px;
+  transition: 10ms;
+     
+ }
+
+.first-name{
+  width: calc(100% / 2);
+  margin-right: 5px;
+  transition: 10ms;
+}
+
+.first-name:hover {
+  width: calc(100%);
+  transition: 10ms;
+}
+ 
+.last-name:hover{
+  width: calc(100%);
+  transition: 10ms;
+}

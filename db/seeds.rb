@@ -1,5 +1,6 @@
 require "open-uri"
 
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -19,14 +20,14 @@ LANGUAGES = ['English', 'Hebrew', 'French', 'German', 'Spanish', 'Arabic', 'Russ
 URLS = [
   "https://images.unsplash.com/photo-1530645298377-82c8416d3f90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
   "https://filmschoolrejects.com/wp-content/uploads/2017/04/0JRofTsuy93evl_J5-1280x720.jpg",
-  "https://images.generated.photos/qfISOJvJFf2v2i9EibbCSunTiDrx-qh6lo_2ZNYikxk/rs:fit:512:512/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zL3Yy/XzA0NzQwNzYuanBn.jpg",
-  "https://images.generated.photos/4q9clus0lnH1hAXwm993cA92l5uE-LPQo5_1d_Dviqo/rs:fit:512:512/Z3M6Ly9nZW5lcmF0/ZWQtcGhvdG9zL3Yy/XzAwNDcyMTguanBn.jpg",
-  "https://s.yimg.com/ny/api/res/1.2/qf8qSb4cdx_iMZxN8aqjYw--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/https://media-mbst-pub-ue1.s3.amazonaws.com/creatr-uploaded-images/2019-08/00dccee0-b80c-11e9-a8fe-4384f23263e2",
+  "https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg",
+  "https://cdn.fastly.picmonkey.com/contentful/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=800&q=70",
   "https://images.squarespace-cdn.com/content/v1/52a1b3bfe4b05a96c7788819/1454769090216-2Y2R9UJTQBWVXC0FY7I1/ke17ZwdGBToddI8pDm48kNu93_l1Rc0JoXikXAEKHf17gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmDJyaVitQ06bkWUY0OMxkmN-bdz7wg8la12Me-ub45vBE5029s6uMXtkNCzVgxK8m/Andrijana-Belovic.jpg",
   "https://gobnewsonline.com/wp-content/uploads/2019/09/artists-create-more-than-100000-ultra-realistic-ai-portraits.jpg",
-  "https://upload.wikimedia.org/wikipedia/commons/b/b6/Queen_Elizabeth_II_in_March_2015.jpg",
+  "https://miro.medium.com/max/2048/0*0fClPmIScV5pTLoE.jpg",
   "https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-10n7ovy_9b42e613.jpeg?region=0,0,450,450",
-  "https://vignette.wikia.nocookie.net/btb/images/6/68/BobSavestheHedgehogs105.png/revision/latest?cb=20190806061908"
+  "https://vignette.wikia.nocookie.net/btb/images/6/68/BobSavestheHedgehogs105.png/revision/latest?cb=20190806061908",
+  "https://i2.cdn.turner.com/cnn/2010/TECH/social.media/11/24/facebook.profile.shots.netiquette/t1larg.man.beer.jpg"
 ]
 
 puts 'Adding seed data...'
@@ -139,13 +140,14 @@ ACTIVITIES = [
 #   new_bike.photos.attach(io:BIKE_PHOTOS[bike[:category]], filename: "bike#{i}.png", content_type: 'image/png')
 # end
 
+
 10.times do |i|
   p i
   email = Faker::Internet.email
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   gender = GENDERS.sample
-  date_of_birth = Faker::Date.in_date_period(year: 1993)
+  date_of_birth = Faker::Date.in_date_period(year: 1950 + (0..52).to_a.sample)
   language = LANGUAGES.sample
 
   activity_sample = ACTIVITIES.sample

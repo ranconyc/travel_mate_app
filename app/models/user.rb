@@ -23,4 +23,14 @@ class User < ApplicationRecord
       self.avatar.attach(io: default_avatar, filename: "default_avatar.png", content_type: 'image/png')
     end
   end
+
+  def age
+    now = Time.now.utc.to_date
+    dob = date_of_birth
+
+    is_later_month = (now.month > dob.month ||
+      (now.month == dob.month && now.day >= dob.day))
+
+    now.year - dob.year - (is_later_month ? 0 : 1)
+  end
 end

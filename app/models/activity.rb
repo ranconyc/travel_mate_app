@@ -34,4 +34,8 @@ class Activity < ApplicationRecord
     end
     time_string.capitalize
   end
+
+  def member?(user)
+    users.include?(user)
+  end
 end

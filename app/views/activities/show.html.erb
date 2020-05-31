@@ -51,7 +51,12 @@
       </p>
       <div class="divider"></div>
       <p class="info-paragraph"><i class="fas fa-users"></i><%= @activity.group_size %> / <%= (@activity.group_size - @activity.members.count) %> spots left </p>
-      <!-- <a href="#" class="activity-card-btn-join">Join</a> -->
+
+      <% if @activity.member?(current_user) %>
+        <%= link_to "Leave",  member_path(@member) , method: :delete, remote: true, class: "activity-card-btn-join" %>
+      <% else %>
+        <%= link_to "Join",  activity_members_path(@activity) , method: :post, remote: true, class: "activity-card-btn-join" %>
+      <% end %>
     </div>
   </div>
 </div>
