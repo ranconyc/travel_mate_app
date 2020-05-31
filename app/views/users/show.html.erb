@@ -4,14 +4,16 @@
       <%= link_to :back do %>
         <i class="fas fa-chevron-left"></i>
       <% end %>
-      <span class="edit-profile"> <i class="far fa-edit"></i> </span>
+      <%= link_to edit_user_path do %>
+        <span class="edit-profile"> <i class="far fa-edit"></i> </span>
+      <% end %>
     </div>
     <div class="user-profile-pic"> <%= cl_image_tag @user.avatar.key, gravity: "faces", height: 73, width: 73, crop: :fill %> </div>
     <h1 lass="user-title"> <%= @user.first_name %> <%= @user.last_name %></h1>
   </div>
   <div class="container-sm">
     <div class="show-info box-background">
-      <p class="user-about"><%= @user.about %>Traveling and looking to make new friends.</p>
+      <p class="user-about"><%= @user.about %></p>
       <div class="divider"></div>
       <p class="info-paragraph"><i class="fas fa-birthday-cake"></i><%= @user.age %></p>
       <div class="divider"></div>
