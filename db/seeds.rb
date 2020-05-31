@@ -9,8 +9,10 @@ require "open-uri"
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Destroying all users & activities"
+puts "Destroying all users, activities & languages "
 Activity.destroy_all
+UserLanguage.destroy_all
+Language.destroy_all
 User.destroy_all
 
 CATEGORIES = ['Night Life', 'Beach', 'Nature', 'Food', 'Site Seeing', 'Sports', 'Classes', 'Next Destination', 'Culture', 'Music']
@@ -30,7 +32,18 @@ URLS = [
   "https://i2.cdn.turner.com/cnn/2010/TECH/social.media/11/24/facebook.profile.shots.netiquette/t1larg.man.beer.jpg"
 ]
 
+# For Language objects we will create:
+languages = []
+
 puts 'Adding seed data...'
+
+puts 'Creating languages...'
+
+LANGUAGES.each do |language|
+  languages << Language.create!(name: language)
+end
+
+
 puts 'Creating users...'
 
 ACTIVITIES = [
@@ -129,16 +142,7 @@ ACTIVITIES = [
   }
 ]
 
-# BIKE_PHOTOS = {
-#   'BMX Bike': URI.open('https://i1.adis.ws/i/washford/143184/X-Rated-Exile-BMX--Bike---24-Wheel.webp?$sfcc_tile$&w=456'),
-#   'City Bike': URI.open('https://cdn.webshopapp.com/shops/212063/files/126309038/6ku-odessa-8spd-city-bike-pershing-gold.jpg'),
-#   'Electric Bike': URI.open('https://img.gkbcdn.com/s3/p/2019-10-23/onebot-s6-folding-electric-bike-250w-motor-max-25km-h-orange-1574132777187.jpg')
-# }
 
-# BIKES = BIKES.map do |bike|
-#   new_bike = Bike.new(bike)
-#   new_bike.photos.attach(io:BIKE_PHOTOS[bike[:category]], filename: "bike#{i}.png", content_type: 'image/png')
-# end
 
 
 10.times do |i|
@@ -148,16 +152,19 @@ ACTIVITIES = [
   last_name = Faker::Name.last_name
   gender = GENDERS.sample
   date_of_birth = Faker::Date.in_date_period(year: 1950 + (0..52).to_a.sample)
-  language = LANGUAGES.sample
-
+  hometown = Faker::Address.city
   activity_sample = ACTIVITIES.sample
 
   user_avatar = URI.open(URLS[i])
   new_user = User.new(email: email, password:'123456', first_name: first_name, last_name: last_name, gender: gender, date_of_birth: date_of_birth,
-                      location: activity_sample[:location], language: language)
+                      location: activity_sample[:location], hometown: hometown)
 
   new_user.avatar.attach(io: user_avatar, filename: "user#{i+1}.jpg", content_type: 'image/jpg')
   new_user.save!
+
+  # languages
+  langs = languages.sample(rand(1..5))
+  new_user.languages << langs
 
   activity_sample[:user] = new_user
   new_activity = Activity.new(activity_sample)

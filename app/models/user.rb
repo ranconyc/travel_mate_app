@@ -8,6 +8,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_one_attached :avatar
   has_many :activities, dependent: :destroy
+  has_many :user_languages, dependent: :destroy
+  has_many :languages, through: :user_languages
 
   validates :first_name, :date_of_birth, :gender, presence: true
   validates :interest, inclusion: { in: Activity::ACTIVITIES }, allow_nil: true
