@@ -19,16 +19,13 @@
       <div class="divider"></div>
       <p class="info-paragraph"><i class="fas fa-map-marked-alt"></i><%= @user.location %></p>
       <div class="divider"></div>
-      <p class="info-paragraph"><i class="fas fa-home"></i>Tel Aviv, Israel</p>
+      <p class="info-paragraph"><i class="fas fa-home"></i> <%= @user.hometown %> </p>
       <div class="divider"></div>
       <p class="info-paragraph"><i class="fas fa-language"></i><%= @user.language %></p>
       <div class="divider"></div>
       <p class="info-paragraph"><i class="fas fa-venus-mars"></i><%= @user.gender %></p>
       <a href="#" class="activity-card-btn-join">Buddy Us</a>
     </div>
-    </div>
-    </div>
-  </div>
   </div>
 </div>
 <%= render 'shared/bottom-navbar' %>
