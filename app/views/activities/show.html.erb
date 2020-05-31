@@ -15,14 +15,16 @@
         <div class="activity-show-avatar" style="background-image: url('<%= cl_image_path @activity.user.avatar.key, gravity: "face", height: 50, width: 50, crop: :fill %>')"></div>
       </li>
     <% @activity.members.each do |member| %>
-    <li class="avatar-item">
-      <div class="activity-show-avatar" style="background-image: url('<%= cl_image_path member.user.avatar.key, gravity: "face", height: 50, width: 50, crop: :fill %>')"></div>
-    </li>
+      <% if member.status == "accept" %>
+        <li class="avatar-item">
+          <div class="activity-show-avatar" style="background-image: url('<%= cl_image_path member.user.avatar.key, gravity: "face", height: 50, width: 50, crop: :fill %>')"></div>
+        </li>
+      <% end %>
     <% end %>
     </ul>
 
 
-    <p> <%= ( @activity.group_size - @activity.members.count ) %> spots left </p>
+    <p> <%= ( @activity.group_size - @activity.members.where(status: "accept").count ) %> spots left </p>
 
   </div>
   <div class="container-sm">
@@ -59,9 +61,16 @@
         </div>
       <% else %>
         <% if @activity.member?(current_user) %>
-          <%= link_to "Leave",  member_path(@member) , method: :delete, remote: true, class: "activity-card-btn-join" %>
+          <% my_member = @activity.members.find_by(user_id: current_user.id) %>
+          <% if my_member %>
+            <% if my_member.status == "pending" %>
+              <%= link_to "Cancel Request", member_path(@member), method: :delete, remote: true, class: "activity-card-btn-join" %>
+            <% elsif my_member.status == "accept" %>
+              <%= link_to "Leave", member_path(@member), method: :delete, remote: true, class: "activity-card-btn-join" %>
+            <% end %>
+          <% end %>
         <% else %>
-          <%= link_to "Join",  activity_members_path(@activity) , method: :post, remote: true, class: "activity-card-btn-join" %>
+          <%= link_to "Join", activity_members_path(@activity), method: :post, remote: true, class: "activity-card-btn-join" %>
         <% end %>
       <% end %>
     </div>
