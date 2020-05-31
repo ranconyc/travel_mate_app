@@ -1,17 +1,21 @@
 <div class="navbar-bottom">
   <div class="nav-links">
 
-    <i class="far fa-envelope"></i>
-
     <%= link_to root_path do %>
       <i class="fas fa-home"></i>
     <% end %>
+
+    <%= link_to dashboard_path do %>
+      <i class="fas fa-bell"></i>
+    <% end %>
+
+   <!--  <i class="fas fa-search"></i> -->
 
     <%= link_to new_activity_path(@activity) do %>
       <i class="fas fa-plus-circle"></i>
     <% end %>
 
-    <i class="fas fa-search"></i>
+    <i class="fas fa-envelope"></i>
 
     <%= link_to user_path(current_user) do %>
       <% if current_user.avatar %>
@@ -20,7 +24,5 @@
         <div class="avatar-navbar" style="background-image: url('<%= cl_image_path 'default_avatar_nxiuyf.png' %>')"></div>
       <% end %>
     <% end %>
-
-    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
   </div>
 </div>
