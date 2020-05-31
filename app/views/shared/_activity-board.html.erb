@@ -1,0 +1,5 @@
+<div class="board">
+  <% @my_activities.each do |activity| %>
+    <%= render 'shared/activity-card', activity: activity %>
+  <% end %>
+</div>

@@ -142,9 +142,6 @@ ACTIVITIES = [
   }
 ]
 
-
-
-
 10.times do |i|
   p i
   email = Faker::Internet.email
@@ -174,14 +171,6 @@ end
 all_activities = Activity.all
 
 10.times do
-  new_member = Member.new(user: all_activities.sample.user, activity: all_activities.sample, status: 'accept')
+  new_member = Member.new(user: all_activities.sample.user, activity: all_activities.sample, status: 'pending')
   new_member.save!
 end
-
-# presenter = User.new(email: 'ran@bob.bob', password: '123456', first_name: 'Ran', last_name: 'Cohen')
-# puts 'Done.'
-
-# #BIKE_CATEGORIES
-# #bikes to different users
-# #category should match bike img
-# #create rental for each user
