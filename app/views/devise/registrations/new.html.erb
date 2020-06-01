@@ -21,12 +21,9 @@
                         input_html: { autocomplete: "new-password" }, label: false, placeholder: 'Password'%>
             <%= f.input :password_confirmation,
                         required: true,
-                        input_html: { autocomplete: "new-password" }, label: false, placeholder: 'Confirm password'%>
-                        <h2 class="Personal-title">Personal Information</h2>
-                        <h6 class="birth-title">Date of birth</h6>
-            <%= f.input :date_of_birth, :start_year => Date.today.year - 12,
-                        :end_year => 1900,
-                        :order => [ :day, :month, :year], required: true, label: false %>
+                        input_html: { autocomplete: "new-password" }, label: false, placeholder: 'Confirm password'%>                            
+            <%= f.input :date_of_birth, as: :string, required: true, input_html: {class: "datepicker"}, label: false, placeholder: 'Date of Birth' %>                     
+                      <h2 class="Personal-title">Personal Information</h2>      
             <%= f.input :location, label: false, placeholder: 'Current location' %>
             <%= f.input :hometown, label: false, placeholder: 'Hometown' %>
             <%= f.association :languages, label: false, placeholder: 'languages', collection: Language.all, include_blank: false, input_html: { multiple: true , class: "select2" } %>
@@ -47,3 +44,4 @@
       </div>
     </div>
   </div>
+  <%= javascript_pack_tag "flatpickr" %>
