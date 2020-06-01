@@ -7,16 +7,14 @@
 
   <div class="category-scroll">
     <div class="cat-card nearby-cat" id="my-location">Nearby</div>
-    <div class="cat-card beach-cat">Beach</div>
-    <div class="cat-card classes-cat">Classes</div>
-    <div class="cat-card culture-cat">Culture</div>
-    <div class="cat-card food-cat">Food</div>
-    <div class="cat-card nature-cat">Nature</div>
-    <div class="cat-card next-cat">Next Destination</div>
-    <div class="cat-card night-cat">Night Life</div>
-    <div class="cat-card music-cat">Music</div>
-    <div class="cat-card site-see-cat">Site Seeing</div>
-    <div class="cat-card sports-cat">Sports</div>
+    <% Activity::ACTIVITIES.each do |activity| %>
+      <% activity_lower = activity.downcase %>
+      <% if @cat == activity_lower %>
+        <%= link_to activity, root_path(cat: activity_lower), class: "cat-card #{activity_lower}-cat cat-selected", data: { activity_category: activity_lower } %>
+      <% else %>
+        <%= link_to activity, root_path(cat: activity_lower), class: "cat-card #{activity_lower}-cat", data: { activity_category: activity_lower } %>
+      <% end %>
+    <% end %>
   </div>
   <div class="container-mobile">
     <div class="Recent">

@@ -28,23 +28,17 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initSelect2 } from '../plugins/init_select2';
 import { initFlashMessageAnimate } from '../plugins/flash_message_animate'
+import { scrollCategories } from '../plugins/category_scroller'
+import { changeButtonBorder } from '../packs/searchButtonBorder'
 import { initActivityAutocomplete, initUserAutocomplete } from '../plugins/init_activity_and_user_location_autocomplete'
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSelect2();
-  initFlashMessageAnimate();
+  initFlashMessageAnimate()
+  scrollCategories()
+  changeButtonBorder()
   initActivityAutocomplete();
   initUserAutocomplete();
 });
-
-
-
-
-
-
-
-
-
-
-
