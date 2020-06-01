@@ -23,6 +23,10 @@
   flex-shrink: 0;
   line-height: normal;
   text-align: center;
+
+  &:hover {
+    color: $white;
+  }
 }
 
 .beach-cat {
