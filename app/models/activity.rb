@@ -14,6 +14,9 @@ class Activity < ApplicationRecord
   validates :title, length: { in: (1..25) }
   validates :description, length: { in: (1..100) }
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   def spots_left
     if members.length < group_size
       if group_size - members.length == 1
