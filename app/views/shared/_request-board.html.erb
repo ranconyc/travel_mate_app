@@ -1,16 +1,19 @@
 <div class="board">
   <% if !@my_activities.empty? %>
-      <% @my_activities.each do |activity| %>
-        <% res = activity.members.all? { |member| member.status == "accept" } %>
-          <% if res %>
-            <h2 id="msg-no-requests">No pending requests!</h2>
-          <% else %>
-            <% activity.members.each do |member| %>
-              <%= render 'shared/request-card', activity: activity, member: member %>
-            <% end %>
-          <% end %>
+    <% my_members = [] %>
+    <% @my_activities.each do |activity| %>
+      <% my_members += activity.members %>
+    <% end %>
+    <% res = my_members.all? { |member| member.status == "accept" } %>
+    <% if res %>
+      <h2 id="msg-no-requests">No pending requests!</h2>
+    <% else %>
+      <% my_members.each do |member| %>
+        <%= render 'shared/request-card', activity: member.activity, member: member %>
       <% end %>
+    <% end %>
   <% else %>
     <h2 id="msg-no-requests">No pending requests!</h2>
+    <% raise %>
   <% end %>
 </div>

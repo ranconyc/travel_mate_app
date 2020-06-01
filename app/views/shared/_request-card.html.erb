@@ -17,8 +17,14 @@
     </div>
 
     <div class="request-btns">
-      <%= link_to "Accept", dashboard_path(status: 'accept', activity: activity, member: member), class: "request-btn-accept" %>
-      <%= link_to "Decline", dashboard_path(status: 'decline', activity: activity, member: member), class: "request-btn-decline" %>
+      <% spots_left = member.activity.group_size - member.activity.members.where(status: "accept").count %>
+      <% if spots_left == 0 %>
+        <%= link_to "Accept", dashboard_path(status: 'decline', activity: activity, member: member), class: "request-btn-accept" %>
+        <%= link_to "Decline", dashboard_path(status: 'decline', activity: activity, member: member), class: "request-btn-decline" %>
+      <% else %>
+        <%= link_to "Accept", dashboard_path(status: 'accept', activity: activity, member: member), class: "request-btn-accept" %>
+        <%= link_to "Decline", dashboard_path(status: 'decline', activity: activity, member: member), class: "request-btn-decline" %>
+      <% end %>
     </div>
   </div>
 <% end %>

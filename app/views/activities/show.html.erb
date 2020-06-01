@@ -1,7 +1,7 @@
 <div class="tm-show-page">
   <div class="header header-xl">
     <div class="back-category">
-      <%= link_to  "/" do %>
+      <%= link_to root_path(anchor: "activity-card-#{@activity.id}") do %>
         <i class="fas fa-chevron-left"></i>
       <% end %>
       <span class="activity-category"> <%= @activity.category %> </span>
@@ -28,7 +28,16 @@
       <% end %>
     <% end %>
     </ul>
-    <p> <%= ( @activity.group_size - @activity.members.where(status: "accept").count ) %> spots left </p>
+
+    <% spots_left = @activity.group_size - @activity.members.where(status: "accept").count %>
+    <% if spots_left == 1 %>
+      <% spots_left_text = "1 spot left" %>
+    <% elsif spots_left > 1 %>
+      <% spots_left_text = "#{spots_left} spots left" %>
+    <% elsif spots_left == 0 %>
+      <% spots_left_text = "Full" %>
+    <% end %>
+    <p><%= spots_left_text %></p>
   </div>
   <div class="container-sm">
     <%= link_to user_path(@activity.user) do %>
@@ -58,7 +67,14 @@
         <% end %>
       </p>
       <div class="divider"></div>
-      <p class="info-paragraph"><i class="fas fa-users"></i><%= @activity.group_size %> / <%= (@activity.group_size - @activity.members.where(status: "accept").count) %> spots left </p>
+      <p class="info-paragraph">
+        <i class="fas fa-users"></i>
+        <% if spots_left >= 1 %>
+          <%= @activity.group_size %> / <%= spots_left_text %>
+        <% elsif spots_left == 0 %>
+          <%= spots_left_text %>
+        <% end %>
+      </p>
 
       <% if @activity.user_id == current_user.id %>
         <div class="activity-edit-delete-btns">
@@ -76,10 +92,11 @@
             <% end %>
           <% end %>
         <% else %>
-          <%= link_to "Join", activity_members_path(@activity), method: :post, remote: true, class: "activity-card-btn-join" %>
+          <% if spots_left > 0 %>
+            <%= link_to "Join", activity_members_path(@activity), method: :post, remote: true, class: "activity-card-btn-join" %>
+          <% end %>
         <% end %>
       <% end %>
     </div>
   </div>
 </div>
-<%= render 'shared/bottom-navbar' %>

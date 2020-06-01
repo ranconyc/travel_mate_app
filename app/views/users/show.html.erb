@@ -24,8 +24,13 @@
       <p class="info-paragraph"><i class="fas fa-home"></i> <%= @user.hometown %> </p>
       <div class="divider"></div>
       <p class="info-paragraph"><i class="fas fa-language"></i>
-        <% @user.languages.each do |language| %>
-        <%= language.name %>
+        <% num_user_languages = @user.languages.length %>
+        <% @user.languages.each_with_index do |language, i| %>
+          <% if i + 1 == num_user_languages %> <!-- in case this is the last language or it's the only one -->
+            <%= language.name %>
+          <% else %>
+            <%= language.name %>,
+          <% end %>
         <% end %>
       </p>
       <div class="divider"></div>
@@ -38,4 +43,3 @@
     </div>
   </div>
 </div>
-<%= render 'shared/bottom-navbar' %>

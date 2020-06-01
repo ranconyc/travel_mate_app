@@ -48,11 +48,11 @@ class PagesController < ApplicationController
   def changeRequestStatus(status, member, activity)
     if status == "accept"
       member.status = "accept"
+      member.save!
     elsif status == "decline"
       member.status = "reject"
       Member.destroy(member.id)
     end
-    member.save!
   end
 
   def get_current_location

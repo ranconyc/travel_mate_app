@@ -24,6 +24,8 @@
         <%= render 'shared/activity-card', activity: single_activity %>
       <% end %>
   </div>
-
-<%= render 'shared/bottom-navbar' %>
+    <% @activities.each do |single_activity| %>
+      <%= render 'shared/activity-card', activity: single_activity %>
+    <% end %>
+</div>
 <%= javascript_pack_tag "my_location" %>
