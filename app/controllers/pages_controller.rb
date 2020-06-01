@@ -2,8 +2,17 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @activities = Activity.all
-    @activities_limit = Activity.order('created_at desc').limit(4)
+    unless user_signed_in?
+      @activities_limit = Activity.order('created_at desc').limit(4)
+      return
+    end
+
+    if params.include? :cat
+      # do the search , store values in @activities
+      @activities = Activity.search_by_category(params[:cat])
+    else
+      @activities = Activity.all
+    end
   end
 
   def dashboard

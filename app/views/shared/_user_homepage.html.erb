@@ -6,16 +6,16 @@
 </div>
 
   <div class="category-scroll">
-    <div class="cat-card beach-cat">Beach</div>
-    <div class="cat-card classes-cat">Classes</div>
-    <div class="cat-card culture-cat">Culture</div>
-    <div class="cat-card food-cat">Food</div>
-    <div class="cat-card nature-cat">Nature</div>
-    <div class="cat-card next-cat">Next Destination</div>
-    <div class="cat-card night-cat">Night Life</div>
-    <div class="cat-card music-cat">Music</div>
-    <div class="cat-card site-see-cat">Site Seeing</div>
-    <div class="cat-card sports-cat">Sports</div>
+    <%= link_to 'Beach', root_path(cat: 'beach'), class: 'cat-card beach-cat', data: { activity_category: 'beach' } %>
+    <%= link_to 'Classes', root_path(cat: 'classes'), class: 'cat-card classes-cat', data: { activity_category: 'classes' } %>
+    <%= link_to 'Culture', root_path(cat: 'culture'), class: 'cat-card culture-cat', data: { activity_category: 'culture' } %>
+    <%= link_to 'Food', root_path(cat: 'food'), class: 'cat-card food-cat', data: { activity_category: 'food' } %>
+    <%= link_to 'Nature', root_path(cat: 'nature'), class: 'cat-card nature-cat', data: { activity_category: 'nature' } %>
+    <%= link_to 'Next Destination', root_path(cat: 'next destination'), class: 'cat-card next-cat', data: { activity_category: 'next destination' } %>
+    <%= link_to 'Night Life', root_path(cat: 'night life'), class: 'cat-card night-cat', data: { activity_category: 'night life' } %>
+    <%= link_to 'Music', root_path(cat: 'music'), class: 'cat-card music-cat', data: { activity_category: 'music' } %>
+    <%= link_to 'Site Seeing', root_path(cat: 'site seeing'), class: 'cat-card site-see-cat', data: { activity_category: 'site seeing' } %>
+    <%= link_to 'Sports', root_path(cat: 'sports'), class: 'cat-card sports-cat', data: { activity_category: 'sports' } %>
   </div>
   <div class="container-mobile">
     <div class="Recent">

@@ -1,5 +1,6 @@
 class Activity < ApplicationRecord
   include ActionView::Helpers::DateHelper
+  include PgSearch::Model
 
   ACTIVITIES = ['Night Life', 'Beach', 'Nature', 'Food', 'Site Seeing', 'Sports', 'Classes', 'Next Destination', 'Culture', 'Music']
   VIBES = ['Chill', 'Pump', 'Explore', 'Fun', 'Heavy', 'Good Vibes Only']
@@ -13,6 +14,12 @@ class Activity < ApplicationRecord
   validates :vibe, inclusion: { in: VIBES }
   validates :title, length: { in: (1..25) }
   validates :description, length: { in: (1..100) }
+
+  pg_search_scope :search_by_category,
+    against: [:category],
+    using: {
+      tsearch: { prefix: true }
+    }
 
   def spots_left
     if members.length < group_size
