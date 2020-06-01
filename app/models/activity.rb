@@ -7,6 +7,7 @@ class Activity < ApplicationRecord
   belongs_to :user
   has_many :members, dependent: :destroy
   has_many :users, through: :members
+  has_many :messages, dependent: :destroy
 
   validates :title, :date, :description, :category, presence: true
   validates :category, inclusion: { in: ACTIVITIES }

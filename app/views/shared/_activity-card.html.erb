@@ -4,7 +4,10 @@
       <div class="avatar-category-title-date">
 
         <% if activity.user.avatar.attached? %>
-          <div class="activity-card-avatar" style="background-image: url('<%= cl_image_path activity.user.avatar.key, gravity: "face", height: 73, width: 73, crop: :fill %>')"></div>
+          <div class="activity-card-avatar"
+          style="background-image: url('<%= cl_image_path activity.user.avatar.key,
+          gravity: 'face', height: 73, width: 73, crop: :fill %>')">
+          </div>
         <% end %>
         <div class="category-title-date">
           <div class="category-upload-time">

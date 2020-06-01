@@ -29,6 +29,7 @@ import "bootstrap";
 import { initSelect2 } from '../plugins/init_select2';
 import { initFlashMessageAnimate } from '../plugins/flash_message_animate'
 import { initActivityAutocomplete, initUserAutocomplete } from '../plugins/init_activity_and_user_location_autocomplete'
+import { initActivityCable } from '../channels/activity_channel'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -36,6 +37,7 @@ document.addEventListener('turbolinks:load', () => {
   initFlashMessageAnimate();
   initActivityAutocomplete();
   initUserAutocomplete();
+  initActivityCable();
 });
 
 
