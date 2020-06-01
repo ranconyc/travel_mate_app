@@ -5,27 +5,25 @@
   </div>
 </div>
 
-  <div class="category-scroll">
-    <div class="cat-card nearby-cat" id="my-location">Nearby</div>
-    <div class="cat-card beach-cat">Beach</div>
-    <div class="cat-card classes-cat">Classes</div>
-    <div class="cat-card culture-cat">Culture</div>
-    <div class="cat-card food-cat">Food</div>
-    <div class="cat-card nature-cat">Nature</div>
-    <div class="cat-card next-cat">Next Destination</div>
-    <div class="cat-card night-cat">Night Life</div>
-    <div class="cat-card music-cat">Music</div>
-    <div class="cat-card site-see-cat">Site Seeing</div>
-    <div class="cat-card sports-cat">Sports</div>
+<div class="category-scroll">
+  <div class="cat-card nearby-cat" id="my-location">Nearby</div>
+  <div class="cat-card beach-cat">Beach</div>
+  <div class="cat-card classes-cat">Classes</div>
+  <div class="cat-card culture-cat">Culture</div>
+  <div class="cat-card food-cat">Food</div>
+  <div class="cat-card nature-cat">Nature</div>
+  <div class="cat-card next-cat">Next Destination</div>
+  <div class="cat-card night-cat">Night Life</div>
+  <div class="cat-card music-cat">Music</div>
+  <div class="cat-card site-see-cat">Site Seeing</div>
+  <div class="cat-card sports-cat">Sports</div>
+</div>
+<div class="container-mobile">
+  <div class="Recent">
+    <h2>Recent activities</h2>
   </div>
-  <div class="container-mobile">
-    <div class="Recent">
-      <h2>Recent activities</h2>
-    </div>
-      <% @activities.each do |single_activity| %>
-        <%= render 'shared/activity-card', activity: single_activity %>
-      <% end %>
-  </div>
-
-<%= render 'shared/bottom-navbar' %>
+    <% @activities.each do |single_activity| %>
+      <%= render 'shared/activity-card', activity: single_activity %>
+    <% end %>
+</div>
 <%= javascript_pack_tag "my_location" %>

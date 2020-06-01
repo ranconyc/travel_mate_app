@@ -18,12 +18,12 @@ class Activity < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
 
   def spots_left
-    if members.length < group_size
-      if group_size - members.length == 1
-        return "1 spot left"
-      end
-      return "#{group_size - members.length} spots left"
-    elsif members.length == group_size
+    num_spots_left = self.group_size - self.members.where(status: "accept").count
+    if num_spots_left == 1
+      return "1 spot left"
+    elsif num_spots_left > 1
+      return "#{num_spots_left} spots left"
+    elsif num_spots_left == 1
       return "Full"
     end
   end

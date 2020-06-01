@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
   def create
     @activity = Activity.find(params[:activity_id])
-    if  @activity.members.count >= @activity.group_size
+    if  @activity.members.where(status: "accept").count >= @activity.group_size
       redirect_to activity_path(@activity), notice: 'this activity is full'
     else
       @member = Member.new

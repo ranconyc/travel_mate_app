@@ -11,5 +11,5 @@
   <%= f.input :location, placeholder: 'Location', label: false %>
   <%= f.input :ideal_member, placeholder: 'Ideal member (optional)', label: false %>
   <%= f.input :price, placeholder: 'Price (optional)', label: false %>
-  <%= f.button :submit, "Create", class: "tm-btn-primery form-btn" %>
+  <%= f.button :submit, "#{activity.id ? "Update" : "Create"}", class: "tm-btn-primery form-btn" %>
 <% end %>

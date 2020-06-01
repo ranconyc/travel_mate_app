@@ -1,5 +1,5 @@
 <%= link_to activity_path(activity) do %>
-  <div class="activity-card activity-card-category-<%= activity.category %>">
+  <div class="activity-card activity-card-category-<%= activity.category %>" id="activity-card-<%= activity.id %>">
     <div class="test1">
       <div class="avatar-category-title-date">
 
@@ -21,6 +21,34 @@
       <div class="activity-card-capacity">
         <p><%= activity.spots_left %></p>
       </div>
-      <%= link_to "Join", activity_members_path(activity), method: :post, class: "activity-card-btn-join" %>
+
+      <% spots_left = activity.group_size - activity.members.where(status: "accept").count %>
+      <% if user_signed_in? %>
+        <% if activity.user_id == current_user.id %>
+          <div class="activity-edit-delete-btns">
+            <%= link_to "Edit", edit_activity_path(activity), class: "btn-activity-edit" %>
+            <%= link_to "Delete", activity_path(activity), method: :delete, class: "btn-activity-delete" %>
+          </div>
+        <% else %>
+          <% if activity.member?(current_user) %>
+            <% my_member = activity.members.find_by(user_id: current_user.id) %>
+            <% if my_member %>
+              <% if my_member.status == "pending" %>
+                <%= link_to "Cancel Request", member_path(my_member), method: :delete, remote: true, class: "activity-card-btn-join" %>
+              <% elsif my_member.status == "accept" %>
+                <%= link_to "Leave", member_path(my_member), method: :delete, remote: true, class: "activity-card-btn-join" %>
+              <% end %>
+            <% end %>
+          <% else %>
+            <% if spots_left > 0 %>
+              <%= link_to "Join", activity_members_path(activity), method: :post, remote: true, class: "activity-card-btn-join" %>
+            <% else %>
+              <%= link_to "Full", activity_members_path(activity), method: :post, remote: true, class: "activity-card-btn-join" %>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= link_to "Join", activity_members_path(activity), method: :post, class: "activity-card-btn-join" %>
+      <% end %>
   </div>
 <% end %>
