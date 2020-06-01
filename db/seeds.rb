@@ -15,7 +15,7 @@ UserLanguage.destroy_all
 Language.destroy_all
 User.destroy_all
 
-CATEGORIES = ['Night Life', 'Beach', 'Nature', 'Food', 'Site Seeing', 'Sports', 'Classes', 'Next Destination', 'Culture', 'Music']
+CATEGORIES = ['Night Life', 'Beach', 'Nature', 'Food', 'Sightseeing', 'Sports', 'Classes', 'Next Destination', 'Culture', 'Music']
 VIBES = ['Chill', 'Pump', 'Explore', 'Fun', 'Heavy', 'Good Vibes Only']
 GENDERS = ['Male', 'Female', 'Non-Binary']
 LANGUAGES = ['English', 'Hebrew', 'French', 'German', 'Spanish', 'Arabic', 'Russian', 'Portuguese', 'Greek', 'Italian']
