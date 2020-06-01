@@ -21,11 +21,8 @@
                         input_html: { autocomplete: "new-password" }, label: false, placeholder: 'Password'%>
             <%= f.input :password_confirmation,
                         required: true,
-                        input_html: { autocomplete: "new-password" }, label: false, placeholder: 'Confirm password'%>
-                        <h6 class="birth-title">Date of birth</h6>
-            <%= f.input :date_of_birth, :start_year => Date.today.year - 12,
-                        :end_year => 1900,
-                        :order => [ :day, :month, :year], required: true, label: false %>
+                        input_html: { autocomplete: "new-password" }, label: false, placeholder: 'Confirm password'%>        
+            <%= f.input :date_of_birth, as: :string, required: true, input_html: {class: "datepicker"}, label: false, placeholder: 'Date of Birth' %>
             <%= f.input :gender, as: :radio_buttons, collection:["Male", "Female", "Non-Binary"], wrapper: :vertical_collection_inline %>
             <h6 class="birth-title">Profile picture</h6>
             <%= f.input :avatar, as: :file, label: false %>
@@ -43,3 +40,4 @@
       </div>
     </div>
   </div>
+  <%= javascript_pack_tag "flatpickr" %>

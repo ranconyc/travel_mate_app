@@ -3,10 +3,14 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 
+
+
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "flatpickr/dist/themes/confetti";
+
 
 // Your CSS partials
 @import "components/index";
