@@ -53,7 +53,11 @@ class PagesController < ApplicationController
         return @mid_cur_location["municipality"]
       end
     else
-      return current_user.location.split(',').first
+      if user_signed_in?
+        return current_user.location.split(',').first
+      else
+        return nil
+      end
     end
   end
 end
