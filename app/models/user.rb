@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :activities, dependent: :destroy
   has_many :user_languages, dependent: :destroy
   has_many :languages, through: :user_languages
+  has_many :messages
 
   validates :first_name, :date_of_birth, :gender, presence: true
   validates :interest, inclusion: { in: Activity::ACTIVITIES }, allow_nil: true
@@ -36,5 +37,9 @@ class User < ApplicationRecord
       (now.month == dob.month && now.day >= dob.day))
 
     now.year - dob.year - (is_later_month ? 0 : 1)
+  end
+
+  def full_name
+    first_name.capitalize + " " + last_name.capitalize
   end
 end

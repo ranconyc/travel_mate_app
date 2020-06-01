@@ -12,25 +12,31 @@
 
     <ul class="avatars-row-widget">
       <li class="avatar-item">
-        <div class="activity-show-avatar" style="background-image: url('<%= cl_image_path @activity.user.avatar.key, gravity: "face", height: 50, width: 50, crop: :fill %>')"></div>
+        <div class="activity-show-avatar"
+             style="background-image: url('<%= cl_image_path @activity.user.avatar.key,
+             gravity: 'face', height: 50, width: 50, crop: :fill %>')">
+        </div>
       </li>
     <% @activity.members.each do |member| %>
       <% if member.status == "accept" %>
         <li class="avatar-item">
-          <div class="activity-show-avatar" style="background-image: url('<%= cl_image_path member.user.avatar.key, gravity: "face", height: 50, width: 50, crop: :fill %>')"></div>
+          <div class="activity-show-avatar"
+               style="background-image: url('<%= cl_image_path member.user.avatar.key,
+               gravity: 'face', height: 50, width: 50, crop: :fill %>')">
+          </div>
         </li>
       <% end %>
     <% end %>
     </ul>
-
-
     <p> <%= ( @activity.group_size - @activity.members.where(status: "accept").count ) %> spots left </p>
-
   </div>
   <div class="container-sm">
     <%= link_to user_path(@activity.user) do %>
       <div class="owner-info box-background">
-        <div class="activity-owner-pic" style="background-image: url('<%= cl_image_path @activity.user.avatar.key, gravity: "face", height: 40, width: 40, crop: :fill %>')">
+        <div class="activity-owner-pic"
+             style="background-image: url('<%= cl_image_path @activity.user.avatar.key,
+             gravity: 'face', height: 40, width: 40, crop: :fill %>')">
+        </div>
         <div class="owner-text">
           <h1 class="owner-name"> <%= @activity.user.first_name.capitalize %> <%= @activity.user.last_name.capitalize %></h1>
           <h1 class="owner-title">Owner</h1>

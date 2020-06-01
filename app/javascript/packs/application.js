@@ -31,6 +31,7 @@ import { initFlashMessageAnimate } from '../plugins/flash_message_animate'
 import { scrollCategories } from '../plugins/category_scroller'
 import { changeButtonBorder } from '../packs/searchButtonBorder'
 import { initActivityAutocomplete, initUserAutocomplete } from '../plugins/init_activity_and_user_location_autocomplete'
+import { initActivityCable } from '../channels/activity_channel'
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -41,4 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   changeButtonBorder()
   initActivityAutocomplete();
   initUserAutocomplete();
+  initActivityCable();
 });

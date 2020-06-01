@@ -1,0 +1,27 @@
+<div class="tm-show-page">
+  <div class="header header-xl">
+    <div class="back-category">
+      <%= link_to :back do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+    </div>
+    <h1 lass="user-title"> <%= @activity.title %> </h1>
+  </div>
+  <div class="container-sm">
+    <div id="messages" data-activity-id="<%= @activity.id %>">
+      <% @activity.messages.each do |message| %>
+        <%= render 'messages/message', message: message %>
+      <% end %>
+    </div>
+    <div class="message-input-bg">
+      <%= simple_form_for [ @activity, @message ], remote: true do |f| %>
+        <%= f.input :content, as: :string, class: 'message-input', label: false, placeholder: "Say something..." %>
+        <%= f.button :submit do %>
+          <div class="send-button">
+            <i class="fas fa-arrow-up"></i>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
