@@ -21,6 +21,9 @@ class Activity < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
+
   def spots_left
     if members.length < group_size
       if group_size - members.length == 1

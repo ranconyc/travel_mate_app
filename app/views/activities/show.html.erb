@@ -32,7 +32,7 @@
       <div class="owner-info box-background">
         <div class="activity-owner-pic" style="background-image: url('<%= cl_image_path @activity.user.avatar.key, gravity: "face", height: 40, width: 40, crop: :fill %>')">
         <div class="owner-text">
-          <h1 class="owner-name"> <%= @activity.user.first_name %> <%= @activity.user.last_name %></h1>
+          <h1 class="owner-name"> <%= @activity.user.first_name.capitalize %> <%= @activity.user.last_name.capitalize %></h1>
           <h1 class="owner-title">Owner</h1>
         </div>
         </div>
@@ -52,7 +52,7 @@
         <% end %>
       </p>
       <div class="divider"></div>
-      <p class="info-paragraph"><i class="fas fa-users"></i><%= @activity.group_size %> / <%= (@activity.group_size - @activity.members.count) %> spots left </p>
+      <p class="info-paragraph"><i class="fas fa-users"></i><%= @activity.group_size %> / <%= (@activity.group_size - @activity.members.where(status: "accept").count) %> spots left </p>
 
       <% if @activity.user_id == current_user.id %>
         <div class="activity-edit-delete-btns">

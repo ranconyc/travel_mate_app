@@ -15,6 +15,8 @@ class PagesController < ApplicationController
       @activities = Activity.all
       @cat = nil
     end
+    # @activities = Activity.all
+    @cur_location = get_current_location
   end
 
   def dashboard
@@ -51,5 +53,23 @@ class PagesController < ApplicationController
       Member.destroy(member.id)
     end
     member.save!
+  end
+
+  def get_current_location
+    if params[:lat] && params[:lon]
+      @activities = Activity.near([params[:lat], params[:lon]], 15)
+      @mid_cur_location = Geocoder.search([params[:lat], params[:lon]]).first.data["address"]
+      if @mid_cur_location["city"]
+        return @mid_cur_location["city"]
+      else
+        return @mid_cur_location["municipality"]
+      end
+    else
+      if user_signed_in?
+        return current_user.location.split(',').first
+      else
+        return nil
+      end
+    end
   end
 end

@@ -15,6 +15,8 @@ class User < ApplicationRecord
   validates :interest, inclusion: { in: Activity::ACTIVITIES }, allow_nil: true
   validates :gender, inclusion: { in: GENDER }
 
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

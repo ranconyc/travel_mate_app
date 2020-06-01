@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+
 // External imports
 import "bootstrap";
 
@@ -29,8 +30,7 @@ import { initSelect2 } from '../plugins/init_select2';
 import { initFlashMessageAnimate } from '../plugins/flash_message_animate'
 import { scrollCategories } from '../plugins/category_scroller'
 import { changeButtonBorder } from '../packs/searchButtonBorder'
-
-
+import { initActivityAutocomplete, initUserAutocomplete } from '../plugins/init_activity_and_user_location_autocomplete'
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -39,12 +39,6 @@ document.addEventListener('turbolinks:load', () => {
   initFlashMessageAnimate()
   scrollCategories()
   changeButtonBorder()
+  initActivityAutocomplete();
+  initUserAutocomplete();
 });
-
-
-
-
-
-
-
-
