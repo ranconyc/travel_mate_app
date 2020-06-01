@@ -27,6 +27,8 @@ class ApplicationController < ActionController::Base
       return
     end
 
+    return if current_user.nil?
+
     language_ids = params[:user][:language_ids].reject { |id| id == '' }
     languages = language_ids.map { |id| Language.find(id) }
     current_user.user_languages.destroy_all

@@ -10,8 +10,8 @@
         <% end %>
       <% end %>
     </div>
-    <div class="user-profile-pic"> <%= cl_image_tag @user.avatar.key, gravity: "faces", height: 73, width: 73, crop: :fill %> </div>
-    <h1 lass="user-title"> <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></h1>
+    <div class="user-profile-pic"> <%= cl_image_tag @user.avatar.key, gravity: 'faces', height: 73, width: 73, crop: :fill %> </div>
+    <h1 lass="user-title"> <%= @user.full_name %></h1>
   </div>
   <div class="container-sm">
     <div class="show-info box-background">

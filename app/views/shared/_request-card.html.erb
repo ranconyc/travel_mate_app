@@ -3,7 +3,10 @@
     <div class="request-info">
       <div class="avatar-applicant-name-request-msg">
         <% if member.user.avatar.attached? %>
-          <div class="request-card-avatar" style="background-image: url('<%= cl_image_path member.user.avatar.key, gravity: "face", height: 46, width: 46, crop: :fill %>')"></div>
+          <div class="request-card-avatar"
+               style="background-image: url('<%= cl_image_path member.user.avatar.key,
+               gravity: 'face', height: 46, width: 46, crop: :fill %>')">
+          </div>
         <% end %>
 
         <div class="applicant-name-request-msg">

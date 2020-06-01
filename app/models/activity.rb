@@ -1,18 +1,26 @@
 class Activity < ApplicationRecord
   include ActionView::Helpers::DateHelper
+  include PgSearch::Model
 
-  ACTIVITIES = ['Night Life', 'Beach', 'Nature', 'Food', 'Site Seeing', 'Sports', 'Classes', 'Next Destination', 'Culture', 'Music']
+  ACTIVITIES = ['Night Life', 'Beach', 'Nature', 'Food', 'Sightseeing', 'Sports', 'Classes', 'Next Destination', 'Culture', 'Music']
   VIBES = ['Chill', 'Pump', 'Explore', 'Fun', 'Heavy', 'Good Vibes Only']
 
   belongs_to :user
   has_many :members, dependent: :destroy
   has_many :users, through: :members
+  has_many :messages, dependent: :destroy
 
   validates :title, :date, :description, :category, presence: true
   validates :category, inclusion: { in: ACTIVITIES }
   validates :vibe, inclusion: { in: VIBES }
   validates :title, length: { in: (1..25) }
   validates :description, length: { in: (1..100) }
+
+  pg_search_scope :search_by_category,
+    against: [:category],
+    using: {
+      tsearch: { prefix: true }
+    }
 
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
