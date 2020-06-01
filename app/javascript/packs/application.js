@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+
 // External imports
 import "bootstrap";
 
@@ -36,6 +37,9 @@ document.addEventListener('turbolinks:load', () => {
   initActivityAutocomplete();
   initUserAutocomplete();
 });
+
+
+
 
 
 
