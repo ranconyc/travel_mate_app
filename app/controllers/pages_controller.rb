@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
     @activities = Activity.all
     @activities_limit = Activity.order('created_at desc').limit(4)
+    @cur_location = get_current_location
   end
 
   def dashboard
@@ -40,5 +41,19 @@ class PagesController < ApplicationController
       Member.destroy(member.id)
     end
     member.save!
+  end
+
+  def get_current_location
+    if params[:lat] && params[:lon]
+      @activities = Activity.near([params[:lat], params[:lon]], 15)
+      @mid_cur_location = Geocoder.search([params[:lat], params[:lon]]).first.data["address"]
+      if @mid_cur_location["city"]
+        return @mid_cur_location["city"]
+      else
+        return @mid_cur_location["municipality"]
+      end
+    else
+      return current_user.location.split(',').first
+    end
   end
 end
