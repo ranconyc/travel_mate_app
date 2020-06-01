@@ -29,7 +29,7 @@
                         :order => [ :day, :month, :year], required: true, label: false %>
             <%= f.input :location, label: false, placeholder: 'Current location' %>
             <%= f.input :hometown, label: false, placeholder: 'Hometown' %>
-            <%= f.association :languages, label: false, placeholder: 'languages', collection: Language.all, include_blank: false, input_html: { multiple: true } %>
+            <%= f.association :languages, label: false, placeholder: 'languages', collection: Language.all, include_blank: false, input_html: { multiple: true , class: "select2" } %>
             <%= f.input :gender, as: :radio_buttons, collection:["Male", "Female", "Non-Binary"], wrapper: :vertical_collection_inline %>
             <h6 class="birth-title">Profile picture</h6>
             <%= f.input :avatar, as: :file, label: false %>

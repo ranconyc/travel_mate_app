@@ -92,13 +92,13 @@
 .full-name {
   display: flex;
   justify-content: space-between;
-} 
+}
 
 .last-name {
   width: calc(100% / 2);
   margin-left: 5px;
   transition: 10ms;
-     
+
  }
 
 .first-name{
@@ -111,8 +111,15 @@
   width: calc(100%);
   transition: 10ms;
 }
- 
+
 .last-name:hover{
   width: calc(100%);
   transition: 10ms;
+}
+
+.Personal-title {
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
 }

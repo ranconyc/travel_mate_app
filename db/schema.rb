@@ -87,7 +87,6 @@ ActiveRecord::Schema.define(version: 2020_05_31_142241) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
-    t.integer "age"
     t.string "gender"
     t.string "location"
     t.string "interest"

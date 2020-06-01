@@ -4,8 +4,10 @@
       <%= link_to :back do %>
         <i class="fas fa-chevron-left"></i>
       <% end %>
-      <%= link_to edit_user_path do %>
-        <span class="edit-profile"> <i class="far fa-edit"></i> </span>
+      <% if @user == current_user %>
+        <%= link_to edit_user_path do %>
+          <span class="edit-profile"><i class="far fa-edit"></i> </span>
+        <% end %>
       <% end %>
     </div>
     <div class="user-profile-pic"> <%= cl_image_tag @user.avatar.key, gravity: "faces", height: 73, width: 73, crop: :fill %> </div>
@@ -28,7 +30,7 @@
       </p>
       <div class="divider"></div>
       <p class="info-paragraph"><i class="fas fa-venus-mars"></i><%= @user.gender %></p>
-      <% if current_user %>
+      <% if @user == current_user %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "activity-card-btn-join" %>
       <% else %>
         <%= link_to "buddy Us", destroy_user_session_path, class: "activity-card-btn-join" %>
