@@ -3,7 +3,6 @@
     <div class="test1">
       <div class="avatar-category-title-date">
 
-        <% activity.user.avatar.attached? %>
         <% if activity.user.avatar.attached? %>
           <div class="activity-card-avatar" style="background-image: url('<%= cl_image_path activity.user.avatar.key, gravity: "face", height: 73, width: 73, crop: :fill %>')"></div>
         <% end %>
@@ -12,7 +11,7 @@
             <h2 class="activity-card-category activity-card-category-<%= activity.category.gsub(/ /, '-').downcase %>"><%= activity.category %></h2>
             <h2 class="activity-card-upload-time"><%= activity.num_hours_ago %></h2>
           </div>
-          <h1 class="activity-card-title"><%= activity.title.capitalize %></h1>
+          <h1 class="activity-card-title"><%= activity.title.split.map(&:capitalize).join(' ') %></h1>
           <h2 class="activity-card-date">Target Date: <%= activity.date %></h2>
         </div>
       </div>
@@ -22,7 +21,6 @@
       <div class="activity-card-capacity">
         <p><%= activity.spots_left %></p>
       </div>
-      <div class="activity-card-btn-join">Join</div>
-      <!-- <a href="#" class="activity-card-btn-join">Join</a> -->
+      <%= link_to "Join", activity_members_path(activity), method: :post, class: "activity-card-btn-join" %>
   </div>
 <% end %>

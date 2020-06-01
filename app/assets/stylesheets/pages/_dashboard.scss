@@ -1,0 +1,25 @@
+.requests-activities-btns {
+  display: flex;
+  justify-content: space-between;
+  background-color: $white;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+
+  .btn-select {
+    color: $white;
+    background-color: $blue;
+  }
+}
+
+.btns-requests-activities {
+  color: black;
+  padding: 10px 44px;
+  border-radius: 6px;
+  font-weight: bold;
+
+  &:hover {
+    color: $white;
+    background-color: $blue;
+  }
+}

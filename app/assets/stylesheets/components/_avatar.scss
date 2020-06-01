@@ -3,10 +3,11 @@
   border-radius: 50%;
 }
 .avatar-navbar {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background-size: cover;
+  border: 1px solid $white;
 }
 .avatar-large {
   width: 56px;

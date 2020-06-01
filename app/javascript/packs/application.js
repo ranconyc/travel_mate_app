@@ -26,14 +26,13 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { initSelect2 } from '../plugins/init_select2';
 import { initFlashMessageAnimate } from '../plugins/flash_message_animate'
-
-
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
+  initSelect2();
   initFlashMessageAnimate()
 });
 

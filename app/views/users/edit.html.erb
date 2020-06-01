@@ -1,0 +1,65 @@
+<div class="tm-show-page">
+  <div class="header header-xl">
+    <div class="back-category">
+      <%= link_to user_path(current_user) do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+    </div>
+    <div class="user-profile-pic"> <%= cl_image_tag @user.avatar.key, gravity: "faces", height: 73, width: 73, crop: :fill %> </div>
+    <h1 class="user-title"> <%= @user.first_name %> <%= @user.last_name %></h1>
+  </div>
+  <div class="container-sm">
+    <div class="show-info box-background user-edit-wrapper">
+
+      <%= simple_form_for(@user) do |f| %>
+        <div class="info-paragraph">
+          <i class="fas fa-book-reader"></i>
+          <%= f.input :about, label: false, placeholder: @user.about %>
+        </div>
+        <div class="divider"></div>
+        <div class="info-paragraph">
+          <i class="fas fa-birthday-cake"></i>
+          <%= f.input :date_of_birth,
+                      label: false,
+                      start_year: Date.today.year - 12,
+                      end_year: 1900,
+                      order: [ :day, :month, :year],
+                      placeholder: 'Date of birth' %>
+        </div>
+        <div class="divider"></div>
+        <div class="info-paragraph">
+          <i class="fas fa-map-marked-alt"></i>
+          <%= f.input :location, label: false, placeholder: @user.location %>
+        </div>
+        <div class="divider"></div>
+        <div class="info-paragraph"><i class="fas fa-home"></i>
+          <%= f.input :hometown, label: false, placeholder: @user.hometown %>
+        </div>
+        <div class="divider"></div>
+        <div class="info-paragraph">
+          <i class="fas fa-language"></i>
+          <%= f.association :languages, label: false, collection: Language.all, include_blank: false, input_html: { multiple: true, class: "select2" },
+           placeholder: @user.languages %>
+        </div>
+        <div class="divider"></div>
+        <div class="info-paragraph">
+          <i class="fas fa-venus-mars"></i>
+          <%= f.input :gender, collection: User::GENDER, label: false, placeholder: @user.gender %>
+        </div>
+        <div class="info-paragraph">
+          <i class="fas fa-file-signature"></i>
+          <%= f.input :first_name, label: false, placeholder: @user.first_name %>
+          <%= f.input :last_name, label: false, placeholder: @user.last_name %>
+        </div>
+        <div class="info-paragraph">
+          <i class="fas fa-user-circle"></i>
+          <%= f.input :avatar, as: :file, label: false %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Save", class: "tm-btn-primery form-btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render 'shared/bottom-navbar' %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_29_124349) do
+ActiveRecord::Schema.define(version: 2020_05_31_142241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,12 @@ ActiveRecord::Schema.define(version: 2020_05_29_124349) do
     t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "members", force: :cascade do |t|
     t.bigint "activity_id", null: false
     t.bigint "user_id", null: false
@@ -60,6 +66,15 @@ ActiveRecord::Schema.define(version: 2020_05_29_124349) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["activity_id"], name: "index_members_on_activity_id"
     t.index ["user_id"], name: "index_members_on_user_id"
+  end
+
+  create_table "user_languages", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "language_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["language_id"], name: "index_user_languages_on_language_id"
+    t.index ["user_id"], name: "index_user_languages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -73,11 +88,11 @@ ActiveRecord::Schema.define(version: 2020_05_29_124349) do
     t.string "first_name"
     t.string "last_name"
     t.string "gender"
-    t.string "language"
     t.string "location"
     t.string "interest"
     t.text "about"
     t.date "date_of_birth"
+    t.string "hometown"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -86,4 +101,6 @@ ActiveRecord::Schema.define(version: 2020_05_29_124349) do
   add_foreign_key "activities", "users"
   add_foreign_key "members", "activities"
   add_foreign_key "members", "users"
+  add_foreign_key "user_languages", "languages"
+  add_foreign_key "user_languages", "users"
 end

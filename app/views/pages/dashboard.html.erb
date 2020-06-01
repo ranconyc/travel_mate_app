@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+  <%= render 'shared/logo_header', text: @query.capitalize, logo_class: 'header-homepage logo-homepage' %>
+  <div class="container-mobile">
+    <div class="requests-activities-selection-and-board">
+      <div class="requests-activities-btns">
+        <%= link_to "Requests", dashboard_path(query: 'requests'), class: "btns-requests-activities #{@query == 'requests' || @query == nil ? 'btn-select' : ''}" %>
+        <%= link_to "Activities", dashboard_path(query: 'activities'), class: "btns-requests-activities #{@query == 'activities' ? 'btn-select' : ''}" %>
+      </div>
+      <% if @query == 'activities' %>
+        <%= render 'shared/activity-board', activities: @my_activities %>
+      <% else %>
+        <%= render 'shared/request-board', activities: @my_activities %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<%= javascript_pack_tag 'changeButtonColor' %>
+<%= render 'shared/bottom-navbar' %>

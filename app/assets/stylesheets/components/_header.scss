@@ -2,7 +2,7 @@
   background: $blue;
   border-radius: 0 0 40px 40px;
   height: 100px;
-   }
+}
 
 .logo {
   font-family: $headers-font;
@@ -11,6 +11,12 @@
   color: $white;
   text-align: center;
   padding-top: 22px;
+}
+
+.header-update .logo {
+  position: relative;
+  top: -43px;
+  // padding-top: -46px;
 }
 
 a:hover {
