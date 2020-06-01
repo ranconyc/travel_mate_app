@@ -1,11 +1,12 @@
 <div class="header-searchbar">
-  <%= render 'shared/logo_header', text: 'Find travel plans near&nbsp;you', logo_class: 'header-homepage logo-homepage' %>
+  <%= render 'shared/logo_header', text: "Welcome to #{@cur_location}!", logo_class: 'header-homepage logo-homepage' %>
   <div class="search-bar">
     <div class="search-btn"><i class="fas fa-search"></i></div>
   </div>
 </div>
 
   <div class="category-scroll">
+    <div class="cat-card nearby-cat" id="my-location">Nearby</div>
     <div class="cat-card beach-cat">Beach</div>
     <div class="cat-card classes-cat">Classes</div>
     <div class="cat-card culture-cat">Culture</div>
@@ -27,3 +28,4 @@
   </div>
 
 <%= render 'shared/bottom-navbar' %>
+<%= javascript_pack_tag "my_location" %>
