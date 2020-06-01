@@ -29,6 +29,10 @@
   }
 }
 
+.cat-selected {
+  border: 4px solid white;
+}
+
 .beach-cat {
   background-color: $beach-category-color;
 }
@@ -49,11 +53,11 @@
   background-color: $nature-category-color;
 }
 
-.next-cat {
+.destination-cat {
   background-color: $next-destination-category-color;
 }
 
-.night-cat {
+.life-cat {
   background-color: $night-life-category-color;
 }
 
@@ -61,7 +65,7 @@
   background-color: $music-category-color;
 }
 
-.site-see-cat {
+.seeing-cat {
   background-color: $site-seeing-category-color;
 }
 

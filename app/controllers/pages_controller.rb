@@ -10,8 +10,10 @@ class PagesController < ApplicationController
     if params.include? :cat
       # do the search , store values in @activities
       @activities = Activity.search_by_category(params[:cat])
+      @cat = params[:cat]
     else
       @activities = Activity.all
+      @cat = nil
     end
   end
 

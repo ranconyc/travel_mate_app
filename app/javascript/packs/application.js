@@ -28,7 +28,7 @@ import "bootstrap";
 import { initSelect2 } from '../plugins/init_select2';
 import { initFlashMessageAnimate } from '../plugins/flash_message_animate'
 import { scrollCategories } from '../plugins/category_scroller'
-
+import { changeButtonBorder } from '../packs/searchButtonBorder'
 
 
 
@@ -38,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   initSelect2();
   initFlashMessageAnimate()
   scrollCategories()
+  changeButtonBorder()
 });
 
 
