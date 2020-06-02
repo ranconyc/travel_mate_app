@@ -1,7 +1,31 @@
 .box-background {
   background: $white;
   border-radius: 6px;
+  padding: 1px 14px 14px 14px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.box-background-activity-owner {
+  background: $white;
+  border-radius: 6px;
   padding: 14px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.box-background-my-user {
+  background: $white;
+  border-radius: 6px;
+  padding: 1px 14px 14px 14px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.box-background-not-my-user {
+  background: $white;
+  border-radius: 6px;
+  padding: 1px 14px 1px 14px;
   margin-top: 14px;
   margin-bottom: 14px;
 }
@@ -14,7 +38,7 @@
 
 .info-paragraph i {
   margin-right: 10px;
-  }
+}
 
 .activity-date-center {
   text-align: center;
@@ -46,4 +70,15 @@
   color: $white;
   font-weight: bold;
   border-radius: 6px;
+}
+
+.user-info-icon {
+  display: inline-block;
+  width: 23px;
+}
+
+.activity-info-icon {
+  display: inline-block;
+  text-align: center;
+  width: 23px;
 }

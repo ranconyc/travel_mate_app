@@ -57,7 +57,7 @@
 
   <div class="container-sm">
     <%= link_to user_path(@activity.user) do %>
-      <div class="owner-info box-background">
+      <div class="owner-info box-background-activity-owner">
         <div class="activity-owner-pic"
              style="background-image: url('<%= cl_image_path @activity.user.avatar.key,
              gravity: 'face', height: 42, width: 42, crop: :fill %>')">
@@ -72,10 +72,12 @@
     <div class="show-info box-background">
       <p class="info-paragraph"><%= @activity.description %> <%= @activity.ideal_member %></p>
       <div class="divider"></div>
-      <p class="info-paragraph"><i class="fas fa-map-marker-alt"></i><%= @activity.location %></p>
+      <p class="info-paragraph">
+        <span class="activity-info-icon"><i class="fas fa-map-marker-alt"></i></span>
+        <%= @activity.location %></p>
       <div class="divider"></div>
       <p class="info-paragraph">
-        <i class="fas fa-dollar-sign"></i>
+        <span class="activity-info-icon"><i class="fas fa-dollar-sign"></i></span>
         <% if @activity.price == 0 || @activity.price.nil? %>
           <%= 'Free' %>
         <% else %>
@@ -84,7 +86,7 @@
       </p>
       <div class="divider"></div>
       <p class="info-paragraph">
-        <i class="fas fa-users"></i>
+        <span class="activity-info-icon"><i class="fas fa-users"></i></span>
         <% if spots_left >= 1 %>
           <%= @activity.group_size %> / <%= spots_left_text %>
         <% elsif spots_left == 0 %>
