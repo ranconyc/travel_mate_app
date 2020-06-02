@@ -5,22 +5,33 @@
       <% @activities.each do |activity| %>
         <%= link_to chat_path(activity) do %>
         <div class="box-background">
-          <h1 class="group-title">
+          <h1 class="chat-title">
             <%= activity.title %>
           </h1>
-          <div class="members">
-            <% activity.members.each do |member| %>
-              <% if member.status == "accept" %>
-                <li class="avatar-item">
-                  <div class="activity-show-avatar"
-                       style="background-image: url('<%= cl_image_path member.user.avatar.key,
-                       gravity: 'face', height: 50, width: 50, crop: :fill %>')">
-                   </div>
-                </li>
+          <div class="bottom-content-chat-card">
+            <ul class="avatars-row-widget">
+              <li class="avatar-item">
+                <div class="activity-show-avatar"
+                   style="background-image: url('<%= cl_image_path activity.user.avatar.key,
+                   gravity: 'face', height: 50, width: 50, crop: :fill %>')">
+                </div>
+              </li>
+              <% activity.members.each do |member| %>
+                <% if member.status == "accept" %>
+                  <li class="avatar-item">
+                    <div class="activity-show-avatar"
+                         style="background-image: url('<%= cl_image_path member.user.avatar.key,
+                         gravity: 'face', height: 50, width: 50, crop: :fill %>')">
+                    </div>
+                  </li>
+                <% end %>
               <% end %>
-            <% end %>
-          </div>
-          <div class="last-update">
+            </ul>
+            <div class="last-update">
+              <% if activity.messages.any? %>
+              <%= activity.messages.last.created_at.strftime("%l:%M%p") %>
+              <% end %>
+            </div>
           </div>
         <% end %>
       <% end %>

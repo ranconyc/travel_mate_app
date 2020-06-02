@@ -23,3 +23,6 @@
 <% else %>
   <%= render 'shared/user_homepage' %>
 <% end %>
+<% if user_signed_in? %>
+  <%= render 'shared/bottom-navbar' %>
+<% end %>

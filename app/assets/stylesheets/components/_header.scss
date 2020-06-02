@@ -80,3 +80,23 @@ a:hover {
   top: 0;
   z-index: 1;
 }
+
+.header-back-link {
+  height: 150px;
+  width: 100%;
+  top: 0;
+}
+
+.header-create {
+  & a {
+    color: $white;
+  }
+  & h1 {
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+.chat-title-show {
+  margin-top: 10px;
+}
