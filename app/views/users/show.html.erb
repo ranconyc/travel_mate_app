@@ -14,16 +14,28 @@
     <h1 lass="user-title"> <%= @user.full_name %></h1>
   </div>
   <div class="container-sm">
-    <div class="show-info box-background">
-      <p class="user-about"><%= @user.about %></p>
+    <div class="show-info <%= @user == current_user ? "box-background-my-user" : "box-background-not-my-user" %>">
+      <% if @user.about %>
+        <p class="user-about"><%= @user.about.capitalize %></p>
+        <div class="divider"></div>
+      <% end %>
+      <p class="info-paragraph">
+        <span class="user-info-icon"><i class="fas fa-birthday-cake"></i></span>
+        <%= @user.age %>
+      </p>
       <div class="divider"></div>
-      <p class="info-paragraph"><i class="fas fa-birthday-cake"></i><%= @user.age %></p>
+      <p class="info-paragraph">
+        <span class="user-info-icon"><i class="fas fa-map-marked-alt"></i></span>
+        <%= @user.location %>
+      </p>
       <div class="divider"></div>
-      <p class="info-paragraph"><i class="fas fa-map-marked-alt"></i><%= @user.location %></p>
+      <p class="info-paragraph">
+        <span class="user-info-icon"><i class="fas fa-home"></i></span>
+        <%= @user.hometown %>
+      </p>
       <div class="divider"></div>
-      <p class="info-paragraph"><i class="fas fa-home"></i> <%= @user.hometown %> </p>
-      <div class="divider"></div>
-      <p class="info-paragraph"><i class="fas fa-language"></i>
+      <p class="info-paragraph">
+        <span class="user-info-icon"><i class="fas fa-language"></i></span>
         <% num_user_languages = @user.languages.length %>
         <% @user.languages.each_with_index do |language, i| %>
           <% if i + 1 == num_user_languages %> <!-- in case this is the last language or it's the only one -->
@@ -34,7 +46,10 @@
         <% end %>
       </p>
       <div class="divider"></div>
-      <p class="info-paragraph"><i class="fas fa-venus-mars"></i><%= @user.gender %></p>
+      <p class="info-paragraph <% @user == current_user ? "mb-auto" : "" %>">
+        <span class="user-info-icon"><i class="fas fa-venus-mars"></i></span>
+        <%= @user.gender %>
+      </p>
       <% if @user == current_user %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "activity-card-btn-join" %>
       <% end %>
