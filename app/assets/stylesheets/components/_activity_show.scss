@@ -1,3 +1,8 @@
+.owner-info {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .owner-name {
   color: $black;
   font-size: 16px;
@@ -6,7 +11,7 @@
 
 .owner-text {
   width: 200px;
-  margin-left: 55px;
+  padding-top: 2px;
 }
 
 .owner-title {
@@ -20,6 +25,8 @@
   width: 42px;
   border-radius: 50%;
   margin-right: 14px;
+  z-index: 2;
+  top: 1px;
 }
 
 .activity-edit-delete-btns {

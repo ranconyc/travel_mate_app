@@ -50,6 +50,7 @@
     <% end %>
     <p><%= spots_left_text %></p>
   </div>
+
   <div class="container-sm">
     <%= link_to user_path(@activity.user) do %>
       <div class="owner-info box-background">
@@ -61,7 +62,7 @@
           <h1 class="owner-name"> <%= @activity.user.first_name.capitalize %> <%= @activity.user.last_name.capitalize %></h1>
           <h1 class="owner-title">Owner</h1>
         </div>
-        </div>
+        <!-- </div> -->
       </div>
     <% end %>
     <div class="show-info box-background">
