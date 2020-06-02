@@ -1,0 +1,26 @@
+<div class="header header-xl chat-header">
+    <div class="back-category">
+      <%= link_to :back do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %>
+    </div>
+    <h1 class="activity-title"><%= @activity.title.split.map(&:capitalize).join(' ') %></h1>
+    <ul class="avatars-row-widget">
+      <li class="avatar-item">
+        <div class="activity-show-avatar"
+             style="background-image: url('<%= cl_image_path @activity.user.avatar.key,
+             gravity: 'face', height: 50, width: 50, crop: :fill %>')">
+        </div>
+      </li>
+    <% @activity.members.each do |member| %>
+      <% if member.status == "accept" %>
+        <li class="avatar-item">
+          <div class="activity-show-avatar"
+               style="background-image: url('<%= cl_image_path member.user.avatar.key,
+               gravity: 'face', height: 50, width: 50, crop: :fill %>')">
+          </div>
+        </li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>

@@ -1,5 +1,6 @@
 class ChatsController < ApplicationController
   def index
+    # @activities = []
     @activities = current_user.activities.order(:title)
   end
 
