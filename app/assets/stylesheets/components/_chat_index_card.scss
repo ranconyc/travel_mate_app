@@ -1,0 +1,19 @@
+.bottom-content-chat-card {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  & ul {
+    margin: 0 10px;
+  }
+}
+
+.chat-title {
+  font-size: 24px;
+  color: $black;
+  font-weight: bold;
+}
+
+.last-update {
+  color: #848383;
+  font-size: 12px;
+}
