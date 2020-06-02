@@ -7,7 +7,7 @@
         <%= link_to "Activities", dashboard_path(query: 'activities'), class: "btns-requests-activities #{@query == 'activities' ? 'btn-select' : ''}" %>
       </div>
       <% if @query == 'activities' %>
-        <%= render 'shared/activity-board', activities: @my_activities %>
+        <%= render 'shared/activity-board', activities: @owned_and_joined_activities %>
       <% else %>
         <%= render 'shared/request-board', activities: @my_activities %>
       <% end %>

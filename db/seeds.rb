@@ -150,7 +150,8 @@ ACTIVITIES = [
   gender = GENDERS.sample
   date_of_birth = Faker::Date.in_date_period(year: 1950 + (0..52).to_a.sample)
   hometown = Faker::Address.city
-  activity_sample = ACTIVITIES.sample
+  # activity_sample = ACTIVITIES.sample
+  activity_sample = ACTIVITIES[i-1]
 
   user_avatar = URI.open(URLS[i])
   new_user = User.new(email: email, password:'123456', first_name: first_name, last_name: last_name, gender: gender, date_of_birth: date_of_birth,

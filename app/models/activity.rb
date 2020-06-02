@@ -31,7 +31,7 @@ class Activity < ApplicationRecord
       return "1 spot left"
     elsif num_spots_left > 1
       return "#{num_spots_left} spots left"
-    elsif num_spots_left == 1
+    elsif num_spots_left == 0
       return "Full"
     end
   end
