@@ -23,18 +23,22 @@
 
     <ul class="avatars-row-widget">
       <li class="avatar-item">
-        <div class="activity-show-avatar"
-             style="background-image: url('<%= cl_image_path @activity.user.avatar.key,
-             gravity: 'face', height: 50, width: 50, crop: :fill %>')">
-        </div>
+        <%= link_to user_path(@activity.user) do %>
+          <div class="activity-show-avatar"
+               style="background-image: url('<%= cl_image_path @activity.user.avatar.key,
+               gravity: 'face', height: 50, width: 50, crop: :fill %>')">
+          </div>
+        <% end %>
       </li>
     <% @activity.members.each do |member| %>
       <% if member.status == "accept" %>
         <li class="avatar-item">
-          <div class="activity-show-avatar"
-               style="background-image: url('<%= cl_image_path member.user.avatar.key,
-               gravity: 'face', height: 50, width: 50, crop: :fill %>')">
-          </div>
+          <%= link_to user_path(member.user) do %>
+            <div class="activity-show-avatar"
+                 style="background-image: url('<%= cl_image_path member.user.avatar.key,
+                 gravity: 'face', height: 50, width: 50, crop: :fill %>')">
+            </div>
+          <% end %>
         </li>
       <% end %>
     <% end %>
