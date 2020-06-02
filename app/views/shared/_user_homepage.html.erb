@@ -1,8 +1,16 @@
 <div class="header-searchbar">
   <%= render 'shared/logo_header', text: "Welcome to #{@cur_location}!", logo_class: 'header-homepage logo-homepage' %>
-  <div class="search-bar">
-    <div class="search-btn"><i class="fas fa-search"></i></div>
-  </div>
+  <%= form_tag root_path, method: :get %>
+    <div class="search-bar">
+      <%= text_field_tag :query,
+        params[:query],
+        class: "search-bar",
+        placeholder: "Search"
+      %>
+        <button type="submit">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
 </div>
 
   <div class="category-scroll">
