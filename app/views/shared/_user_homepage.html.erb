@@ -14,13 +14,19 @@
 </div>
 
   <div class="category-scroll">
-    <div class="cat-card nearby-cat" id="my-location">Nearby</div>
+    <div class="cat-card nearby-cat" id="my-location"><i class="fas"></i> Nearby</div>
     <% Activity::ACTIVITIES.each do |activity| %>
       <% activity_lower = activity.downcase %>
       <% if @cat == activity_lower %>
-        <%= link_to activity, root_path(cat: activity_lower), class: "cat-card #{activity_lower}-cat cat-selected", data: { activity_category: activity_lower } %>
+        <%= link_to root_path(cat: activity_lower), class: "cat-card #{activity_lower}-cat cat-selected", data: { activity_category: activity_lower } do %>
+          <i class="fas"></i>
+          <%= activity %>
+        <% end %>
       <% else %>
-        <%= link_to activity, root_path(cat: activity_lower), class: "cat-card #{activity_lower}-cat", data: { activity_category: activity_lower } %>
+        <%= link_to root_path(cat: activity_lower), class: "cat-card #{activity_lower}-cat", data: { activity_category: activity_lower } do %>
+          <i class="fas"></i>
+          <%= activity %>
+        <% end %>
       <% end %>
     <% end %>
   </div>

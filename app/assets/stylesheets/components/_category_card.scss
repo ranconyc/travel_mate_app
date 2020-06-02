@@ -1,6 +1,6 @@
 .category-scroll {
   overflow: auto;
-  height: 55px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   margin-left: 16px;
@@ -18,11 +18,12 @@
 
 .cat-card {
   color: $white;
-  height: 50px;
-  width: 150px;
+  height: 74px;
+  width: 110px;
   margin: 5px 5px 0px 5px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   border-radius: 6px;
   font-family: "Roboto", "Helvetica", "sans-serif";
@@ -31,9 +32,13 @@
   flex-shrink: 0;
   line-height: normal;
   text-align: center;
+  padding: 10px;
 
   &:hover {
     color: $white;
+  }
+  i {
+    font-size: 28px;
   }
 }
 
@@ -43,44 +48,64 @@
 
 .nearby-cat {
   background-color: black;
+
+  i::before {
+    content: "\f21d";
+  }
 }
 
-.beach-cat {
-  background-color: $beach-category-color;
-}
-
-.classes-cat {
+.workshops-cat {
   background-color: $classes-category-color;
+
+  i::before {
+    content: "\f19d"
+  }
 }
 
 .culture-cat {
   background-color: $culture-category-color;
+
+  i::before {
+    content: "\f03e";
+  }
 }
 
 .food-cat {
   background-color: $food-category-color;
+
+  i::before {
+    content: "\f2e7";
+  }
 }
 
 .nature-cat {
   background-color: $nature-category-color;
+
+  i::before {
+    content: "\f1bb";
+  }
 }
 
-.destination-cat {
+.travel-cat {
   background-color: $next-destination-category-color;
+
+  i::before {
+    content: "\f207";
+  }
 }
 
 .life-cat {
   background-color: $night-life-category-color;
+
+  i::before {
+    content: "\f79f";
+  }
 }
 
-.music-cat {
-  background-color: $music-category-color;
-}
-
-.sightseeing-cat {
-  background-color: $site-seeing-category-color;
-}
-
-.sports-cat {
+.sport-cat {
   background-color: $sports-category-color;
+
+  i::before {
+    content: "\f70c";
+  }
 }
