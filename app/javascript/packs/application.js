@@ -34,12 +34,13 @@ import { initActivityAutocomplete, initUserAutocomplete } from '../plugins/init_
 import { initActivityCable } from '../channels/activity_channel'
 
 
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSelect2();
-  initFlashMessageAnimate()
-  scrollCategories()
-  changeButtonBorder()
+  initFlashMessageAnimate();
+  scrollCategories();
+  changeButtonBorder();
   initActivityAutocomplete();
   initUserAutocomplete();
   initActivityCable();
