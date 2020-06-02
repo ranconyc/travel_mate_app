@@ -1,9 +1,14 @@
 <%= link_to "/" do %>
- <div class="header <%= logo_class if defined?(logo_class) %>">
-  <% unless defined?(text) %>
-    <h1 class="logo"><strong>Travel</strong>Mate</h1>
-  <% else %>
-    <h1 class="logo"><%= raw(text) %></h1>
-  <% end %>
- </div>
+  <div class="header <%= logo_class if defined?(logo_class) %>">
+    <% if current_page?('/users/sign_up') || current_page?('/users/sign_in') %>
+      <div class="back-category">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+    <% end %>
+    <% unless defined?(text) %>
+      <h1 class="logo"><strong>Travel</strong>Mate</h1>
+    <% else %>
+      <h1 class="logo"><%= raw(text) %></h1>
+    <% end %>
+  </div>
 <% end %>

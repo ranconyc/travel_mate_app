@@ -1,6 +1,6 @@
 <div class="board">
-  <% if !@my_activities.empty? %>
-    <% @my_activities.each do |activity| %>
+  <% if !activities.empty? %>
+    <% activities.each do |activity| %>
       <%= render 'shared/activity-card', activity: activity %>
     <% end %>
   <% else %>

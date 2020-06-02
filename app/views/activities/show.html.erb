@@ -1,14 +1,25 @@
 <div class="tm-show-page">
   <div class="header header-xl">
     <div class="back-category">
-      <%= link_to root_path(anchor: "activity-card-#{@activity.id}") do %>
-        <i class="fas fa-chevron-left"></i>
+      <% if request.referer == root_url || request.referer.nil? %>
+        <%= link_to root_path(anchor: "activity-card-#{@activity.id}") do %>
+          <i class="fas fa-chevron-left"></i>
+        <% end %>
+      <% elsif request.referer && request.referer.match(/dashboard/) %>
+        <%= link_to :back do %>
+          <i class="fas fa-chevron-left"></i>
+        <% end %>
+      <% else %>
+        <%= link_to root_path(anchor: "activity-card-#{@activity.id}") do %>
+          <i class="fas fa-chevron-left"></i>
+        <% end %>
       <% end %>
-      <span class="activity-category"> <%= @activity.category %> </span>
+
+      <span class="activity-category"><%= @activity.category %></span>
     </div>
+
     <h4 class="activity-date-center"><%= @activity.date %></h4>
     <h1 class="activity-title"><%= @activity.title.split.map(&:capitalize).join(' ') %></h1>
-
 
     <ul class="avatars-row-widget">
       <li class="avatar-item">
@@ -60,7 +71,7 @@
       <div class="divider"></div>
       <p class="info-paragraph">
         <i class="fas fa-dollar-sign"></i>
-        <% if @activity.price == 0 %>
+        <% if @activity.price == 0 || @activity.price.nil? %>
           <%= 'Free' %>
         <% else %>
           <%= @activity.price %>
