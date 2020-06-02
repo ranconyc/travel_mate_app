@@ -21,6 +21,8 @@ class PagesController < ApplicationController
 
   def dashboard
     @my_activities = Activity.where(user: current_user)
+    @my_joined_activities = getJoinedActivities
+    @owned_and_joined_activities = @my_activities + @my_joined_activities
     @my_requests = getPendingRequests
     @query = params[:query]
     @status = params[:status]
@@ -53,6 +55,15 @@ class PagesController < ApplicationController
       member.status = "reject"
       Member.destroy(member.id)
     end
+  end
+
+  def getJoinedActivities
+    my_joined_activities_arr = []
+    members_arr = Member.where(user_id: current_user.id)
+    members_arr.each do |member|
+      my_joined_activities_arr << Activity.find(member.activity_id)
+    end
+    my_joined_activities_arr
   end
 
   def get_current_location

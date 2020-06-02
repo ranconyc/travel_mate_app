@@ -13,6 +13,27 @@
   padding-top: 22px;
 }
 
+.banner .logo {
+  font-family: $headers-font;
+  font-weight: normal;
+  font-size: 32px;
+  color: $white;
+  text-align: center;
+  padding-top: 22px;
+}
+
+.header-login-signup .logo {
+  font-family: $headers-font;
+  font-weight: normal;
+  font-size: 32px;
+  color: $white;
+  text-align: center;
+  padding-top: 22px;
+  z-index:1;
+  position: relative;
+  top: -44px;
+}
+
 .header-update .logo {
   position: relative;
   top: -43px;
