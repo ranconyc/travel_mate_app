@@ -3,53 +3,56 @@
     <%= render 'shared/logo_header' %>
   </div>
     <div class="container-sm">
-      <div class="tm-form">
-        <h2 class="form-title">Sign up</h2>
+      <div class="tm-form">        
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
-
-          <div class="form-inputs">
-            <div class="full-name">
-              <span class="first-name"><%= f.input :first_name, label: false, placeholder: 'First name' %></span>
-              <span class="last-name"><%= f.input :last_name, label: false, placeholder: 'Last name' %></span>
-            </div>
-            <%= f.input :email,
-                        required: true,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" }, label: false, placeholder: 'Email' %>
-            <%= f.input :password,
-                        required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" }, label: false, placeholder: 'Password'%>
-            <%= f.input :password_confirmation,
-                        required: true,
-                        input_html: { autocomplete: "new-password" }, label: false, placeholder: 'Confirm password'%>
-            <%= f.input :date_of_birth, as: :string, required: true, input_html: {class: "datepicker"}, label: false, placeholder: "What's your birthday?" %>
-                      <h2 class="Personal-title">Personal Information</h2>
+          <div id="part_1">
+            <h2 class="form-title"> Let's Get Started</h2>
+            <div class="form-inputs">
+              <div class="full-name">
+                <span class="first-name"><%= f.input :first_name, label: false, placeholder: 'First name' %></span>
+                <span class="last-name"><%= f.input :last_name, label: false, placeholder: 'Last name' %></span>
+              </div>
+              <%= f.input :email,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "email" }, label: false, placeholder: 'Email' %>
+              <%= f.input :password,
+                          required: true,
+                          hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                          input_html: { autocomplete: "new-password" }, label: false, placeholder: 'Password'%>
+              <%= f.input :password_confirmation,
+                          required: true,
+                          input_html: { autocomplete: "new-password" }, label: false, placeholder: 'Confirm password'%>
+              <!-- <%= f.button :submit, "Start Your Profile", class: "tm-btn-primery form-btn", input_html: { class: "forward" } %> -->
+              <button type="button" class="btn btn-primary form-btn" id="forward">Create Your Profile</button>          
+            </div> <!-- form-inputs -->
+          </div> <!-- part 1 -->
+          <div id="part_2" hidden>
+            <h2 class="form-title">Tell Us About Yourself</h2>
             <div id="upload-photo" class="tm-btn-primery form-btn absolute-0-0">
-
               <%= f.input :avatar, as: :file, input_html: { hidden: true,  id: 'photo-input'}, :label_html => { :class => 'absolute-0-0 selected'  }, label: 'Add A Picture' %>           
             </div> 
-            <center><%= f.input :gender, as: :radio_buttons, collection:["Male", "Female", "Non-Binary"], wrapper: :vertical_collection_inline %></center>  
-
+            <center><%= f.input :gender, as: :radio_buttons, collection:["Male", "Female", "Non-Binary"], wrapper: :vertical_collection_inline %></center>
+            <%= f.input :date_of_birth, as: :string, required: false, input_html: {class: "datepicker"}, label: false, placeholder: "What's your birthday?" %>
             <%= f.input :location, label: false, placeholder: 'Current location' %>
             <%= f.input :hometown, label: false, placeholder: 'Hometown' %>
             <%= f.association :languages, label: false, placeholder: 'languages', collection: Language.all, include_blank: false, input_html: { multiple: true , class: "select2" } %>
-
-          </div>
-
-          <div class="form-actions">
-            <%= f.button :submit, "Sign up", class: "tm-btn-primery form-btn" %>
-          </div>
-        <% end %>
-        <div class="login-link">
-          <span>Already have an account?</span>
-          <%= render "devise/shared/links" %>
-        </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Sign up", class: "tm-btn-primery form-btn" %>
+            </div>
+                   
+            <% end %>
+              <div class="login-link">
+                <span>Already have an account?</span>
+                <%= render "devise/shared/links" %>
+              </div>
+          </div>    
 
       </div>
     </div>
   </div>
   <%= javascript_pack_tag "flatpickr" %>
   <%= javascript_pack_tag "photo_btn" %>
+  <%= javascript_pack_tag "signup_toggle" %>
 

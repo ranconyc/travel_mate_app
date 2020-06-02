@@ -124,7 +124,7 @@
   margin-bottom: 15px;
 }
 
-#upload-photo {
+#upload-photo, #forward {
   display: flex;
   justify-content: center;
   height: 45px;
@@ -132,6 +132,16 @@
   background-color: #FFA85F;
   margin-bottom: 15px;
   // transition: s;
+}
+
+#forward {
+  border:  #FFA85F;
+  font-weight: bold;
+  font-display: opt;
+}
+
+.form-btn{
+  background-color: #FFA85F;
 }
 
 
@@ -147,3 +157,4 @@
   text-transform: uppercase;
   // background-color: red !important;
 }
+
