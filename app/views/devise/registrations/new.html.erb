@@ -25,7 +25,7 @@
             <%= f.input :date_of_birth, as: :string, required: true, input_html: {class: "datepicker"}, label: false, placeholder: "What's your birthday?" %>                     
                       <h2 class="Personal-title">Personal Information</h2>
             <div id="upload-photo" class="tm-btn-primery form-btn absolute-0-0">
-              <%= f.input :avatar, as: :file, input_html: { hidden: true,  id: 'photo-input'}, :label_html => { :class => 'absulote-0-0 selected'  }, label: 'Add A Picture' %>           
+              <%= f.input :avatar, as: :file, input_html: { hidden: true,  id: 'photo-input'}, :label_html => { :class => 'absolute-0-0 selected'  }, label: 'Add A Picture' %>           
             </div> 
             <center><%= f.input :gender, as: :radio_buttons, collection:["Male", "Female", "Non-Binary"], wrapper: :vertical_collection_inline %></center>   
             <%= f.input :location, label: false, placeholder: 'Current location' %>
