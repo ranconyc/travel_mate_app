@@ -1,7 +1,5 @@
 <div class="tm-show-page">
-  <div class="header header-xl">
-    <h1 lass="user-title"> Your Chats</h1>
-  </div>
+<%= render 'shared/logo_header', text: 'Your Chats', logo_class: 'header-homepage logo-homepage' %>
   <div class="container-sm">
     <div class="all-messages">
       <% @activities.each do |activity| %>
@@ -23,10 +21,11 @@
             <% end %>
           </div>
           <div class="last-update">
-            <%= activity.messages.last %>
+            <%= activity.messages.last.created_at.strftime("%l:%M%p") %>
           </div>
         <% end %>
       <% end %>
+      </div>
     </div>
   </div>
 </div>
