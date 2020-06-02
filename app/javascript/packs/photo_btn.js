@@ -6,11 +6,10 @@ const previewImageOnFileSelect = () => {
   if (input) {
     // we add a listener to know when a new picture is uploaded
     input.addEventListener('change', () => {
-      // we call the displayPreview function (who retrieve the image url and display it)
       btn.classList.add('input_var');
       label.innerHTML = "You Look Good!";
-    })
-  }
-}
+    });
+  };
+};
 
 previewImageOnFileSelect();
