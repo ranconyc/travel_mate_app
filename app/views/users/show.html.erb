@@ -10,7 +10,7 @@
         <% end %>
       <% end %>
     </div>
-    <div class="user-profile-pic"> <%= cl_image_tag @user.avatar.key, gravity: 'faces', height: 73, width: 73, crop: :fill %> </div>
+    <div class="user-profile-pic"> <%= cl_image_tag @user.avatar.key, gravity: 'face', height: 94, width: 94, crop: :fill %> </div>
     <h1 lass="user-title"> <%= @user.full_name %></h1>
   </div>
   <div class="container-sm">
@@ -37,8 +37,6 @@
       <p class="info-paragraph"><i class="fas fa-venus-mars"></i><%= @user.gender %></p>
       <% if @user == current_user %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "activity-card-btn-join" %>
-      <% else %>
-        <%= link_to "buddy Us", destroy_user_session_path, class: "activity-card-btn-join" %>
       <% end %>
     </div>
   </div>
