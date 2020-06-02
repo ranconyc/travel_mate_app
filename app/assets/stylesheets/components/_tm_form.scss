@@ -131,12 +131,9 @@
   width: calc(100%);
   background-color: #FFA85F;
   margin-bottom: 15px;
+  // transition: s;
 }
 
-// #upload-photo:hover {
-//   background-color: orangered ;
-
-// }
 
 .absolute-0-0 label {
   width: 100%;
@@ -144,4 +141,9 @@
   position: absolute;
   left: 0;
   z-index:5;
+}
+
+.input_var {
+  text-transform: uppercase;
+  // background-color: red !important;
 }
