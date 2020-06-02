@@ -16,8 +16,9 @@ class Activity < ApplicationRecord
   validates :title, length: { in: (1..25) }
   validates :description, length: { in: (1..100) }
 
-  pg_search_scope :search_by_category,
-    against: [:category],
+  pg_search_scope :search_by_category, against: [:category]
+  pg_search_scope :global_search,
+    against: { title: 'A', description: 'B', location: 'B', category: 'C', vibe: 'D' },
     using: {
       tsearch: { prefix: true }
     }

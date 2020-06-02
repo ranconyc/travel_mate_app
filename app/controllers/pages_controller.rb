@@ -7,15 +7,17 @@ class PagesController < ApplicationController
       return
     end
 
-    if params.include? :cat
+    @cat = nil
+    if params[:query].present?
+      @activities = Activity.global_search(params[:query])
+    elsif params.include? :cat
       # do the search , store values in @activities
       @activities = Activity.search_by_category(params[:cat])
       @cat = params[:cat]
     else
       @activities = Activity.all
-      @cat = nil
     end
-    # @activities = Activity.all
+
     @cur_location = get_current_location
   end
 
