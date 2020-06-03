@@ -5,8 +5,8 @@
   align-items: center;
   background: $white;
   border-radius: 6px;
-  width: 256px;
-  margin-left: 58px;
+  width: 300px;
+  margin-left: 30px;
   & input {
     border: none;
     margin: 0;
@@ -22,6 +22,7 @@
 
 .message_content {
   margin: 0;
+  width: 290px;
 }
 
 .chat-btn {
@@ -58,7 +59,7 @@
 
 // your massgae bubble
 .your-message-container {
-  background-color: #8E9AEC;
+  background-color: #E0A76F;
   color: $white;
   padding: 10px;
   margin-bottom: 10px;
@@ -73,12 +74,13 @@
   min-height: 35px;
   max-height: 35px;
   border: 1px solid $white;
+  margin-bottom: 5px;
 }
 
 .message-container {
   background-color: $white;
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 0 0 -20px 5px;
   border-radius: 12px 12px 12px 0;
 }
 

@@ -1,8 +1,10 @@
 // Specific CSS for your home-page
 .banner {
   width: 100%;
-  height: 588px;
-  background: $white;
+  height: 600px;
+  background-image: url('bg-imag.png');
+  background-position: center;
+  background-size: cover;
 }
 
 .slogan {

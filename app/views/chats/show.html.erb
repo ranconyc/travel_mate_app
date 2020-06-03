@@ -3,11 +3,7 @@
   <div class="container-sm">
     <div id="messages" data-activity-id="<%= @activity.id %>">
       <% @activity.messages.each do |message| %>
-        <% if current_user == message.user %>
-          <%= render 'messages/your_message', message: message %>
-        <% else %>
           <%= render 'messages/message', message: message %>
-        <% end %>
       <% end %>
     </div>
   </div>
@@ -22,3 +18,5 @@
       <% end %>
     </div>
 </div>
+
+<% content_for :title, "#{@activity.title.split.map(&:capitalize).join(' ')} Chat · TravelMate" %>

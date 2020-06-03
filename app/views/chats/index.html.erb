@@ -1,10 +1,10 @@
 <div class="tm-show-page">
-<%= render 'shared/logo_header', text: 'Your Chats', logo_class: 'header-homepage logo-homepage' %>
+<%= render 'shared/logo_header', text: 'Your Chats', logo_class: 'header-chat-index logo-homepage' %>
   <div class="container-sm">
     <div class="all-messages">
       <% @activities.each do |activity| %>
+        <div class="box-background margin-chat-box">
         <%= link_to chat_path(activity) do %>
-        <div class="box-background">
           <h1 class="chat-title">
             <%= activity.title %>
           </h1>
@@ -34,9 +34,12 @@
             </div>
           </div>
         <% end %>
-      <% end %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
 <%= render 'shared/bottom-navbar' %>
+
+<% content_for :title, "Chats · TravelMate" %>
+
