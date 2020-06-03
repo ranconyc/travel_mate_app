@@ -39,7 +39,7 @@
             <%= f.input :hometown, label: false, placeholder: 'Hometown' %>
             <%= f.association :languages, label: false, placeholder: 'languages', collection: Language.all, include_blank: false, input_html: { multiple: true , class: "select2" } %>
             <div class="form-actions">
-              <%= f.button :submit, "Find Some Buddies", class: "tm-btn-primery form-btn" %>
+              <%= f.button :submit, "Create your account", class: "tm-btn-primery form-btn" %>
             </div>
 
             <% end %>

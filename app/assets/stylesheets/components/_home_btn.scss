@@ -11,7 +11,7 @@
   &:hover {
     text-decoration: none;
     color: $white;
-    background: $blue-hover;
+    background: $btn-orange;
   }
 }
 
@@ -22,14 +22,14 @@
   background: $btn-orange;
   color: $white;
   border-radius: 4px;
-  padding: 8px 100px;
+  padding: 10px 100px;
   text-align: center;
   margin: 0px 0px;
   font-weight: bold;
   &:hover {
     text-decoration: none;
     color: $white;
-    background: $light-blue;
+    background: $btn-blue;
   }
 }
 
@@ -38,8 +38,8 @@
   background-color: $white;
   padding: 7px 6px;
   border-radius: 6px;
-  margin-right: 11px;
-  margin-left: 11px;
+  margin-right: 16px;
+  margin-left: 16px;
   margin-top: 385px;
 
 }
