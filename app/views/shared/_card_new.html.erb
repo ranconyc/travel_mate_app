@@ -1,0 +1,35 @@
+
+  <div class="activity-card-new activity-card-new-category-<%= activity.category.gsub(/ /, '-').downcase %>">
+    <div class="activity-card-new-info">
+      <%= link_to activity_path(activity) do %>
+        <div class="activity-card-new-date-title-category">
+          <div class="activity-card-new-date-title">
+            <h2 id="activity-card-new-date"><%= activity.getDateRepresentation %></h2>
+            <h1 id="activity-card-new-title"><%= activity.title.split.map(&:capitalize).join(' ') %></h1>
+          </div>
+        </div>
+      <% end %>
+       <div class="bottom-content-chat-card">
+            <ul class="avatars-row-widget">
+              <li class="avatar-item">
+                <div class="activity-show-avatar"
+                   style="background-image: url('<%= cl_image_path activity.user.avatar.key,
+                   gravity: 'face', height: 50, width: 50, crop: :fill %>')">
+                </div>
+              </li>
+              <% activity.members.each do |member| %>
+                <% if member.status == "accept" %>
+                  <li class="avatar-item">
+                    <div class="activity-show-avatar"
+                         style="background-image: url('<%= cl_image_path member.user.avatar.key,
+                         gravity: 'face', height: 50, width: 50, crop: :fill %>')">
+                    </div>
+                  </li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+          <div class="category-color-line"></div>
+        <% end %>
+    </div>
+  </div>

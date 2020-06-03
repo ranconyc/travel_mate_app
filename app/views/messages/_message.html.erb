@@ -1,4 +1,16 @@
-<% if current_user == message.user %>
+<% if flag == 'received' %>
+  <div class="message-container" id="message-<%= message.id %>">
+    <h4 class="message-author"><%= message.user.full_name %></h4>
+    <div class="message-content">
+      <p><%= message.content %></p>
+      <small><%= message.created_at.strftime("%l:%M%p") %></small>
+    </div>
+</div>
+    <div class="activity-show-avatar chat-avatar"
+         style="background-image: url('<%= cl_image_path message.user.avatar.key,
+         gravity: 'face', height: 35, width: 35, crop: :fill %>')">
+    </div>
+<% elsif current_user.id == message.user_id  %>
   <div class="your-message-container" id="message-<%= message.id %>">
     <div class="message-content">
       <p><%= message.content %></p>
