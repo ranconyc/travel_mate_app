@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TravelMateApp</title>
+    <title><%= meta_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag("favicon.svg") %>
-    <meta property="og:title" content="TravelMate">
-    <meta property="og:image" content="../../assets/images/ogimage.png">
-    <meta property="og:description" content="TravelMate - Discover the world with the people around you.">
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="www.travel-mate.xyz" />
+    <meta property="og:title" content="<%= meta_title %>">
+    <meta property="og:description" content="<%= meta_description %>" />
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:image" content="<%= meta_image %>">
+    <meta property="og:description" content="<%= meta_description %>">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Facebook Open Graph data -->
+    <!-- <meta property="og:title" content="<%= meta_title %>" /> -->
+    <!-- <meta property="og:type" content="website" /> -->
+    <!-- <meta property="og:url" content="<%= request.original_url %>" /> -->
+    <!-- <meta property="og:image" content="<%= meta_image %>" /> -->
+    <!-- <meta property="og:description" content="<%= meta_description %>" /> -->
+    <!-- <meta property="og:site_name" content="<%= meta_title %>" /> -->
+
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
