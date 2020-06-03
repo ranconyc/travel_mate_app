@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDISCLOUD_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: travel_mate_app_production
+  url: <%= ENV["REDISCLOUD_URL"] { "redis://localhost:6379/1" } %>
+  channel_prefix: travel_mate_production

@@ -15,7 +15,7 @@
             <h2 class="activity-card-upload-time"><%= activity.num_hours_ago %></h2>
           </div>
           <h1 class="activity-card-title"><%= activity.title.split.map(&:capitalize).join(' ') %></h1>
-          <h2 class="activity-card-date">Target Date: <%= activity.getDateRepresentation %></h2>
+          <h2 class="activity-card-date"><%= activity.getDateRepresentation %></h2>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
       </div>
 
       <% spots_left = activity.group_size - activity.members.where(status: "accept").count %>
-      <% if user_signed_in? %>
+<!--       <% if user_signed_in? %>
         <% if activity.user_id == current_user.id %>
           <div class="activity-edit-delete-btns">
             <%= link_to "Edit", edit_activity_path(activity), class: "btn-activity-edit" %>
@@ -52,6 +52,6 @@
         <% end %>
       <% else %>
         <%= link_to "Join", activity_members_path(activity), method: :post, class: "activity-card-btn-join" %>
-      <% end %>
+      <% end %> -->
   </div>
 <% end %>
