@@ -21,3 +21,20 @@
     color: $white;
   }
 }
+
+#requests-notification {
+  background-color: red;
+  color: $white;
+  text-align: center;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 109px;
+  top: 2px;
+  z-index: 1;
+}
+
+.fa-bell {
+  position: relative;
+}

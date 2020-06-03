@@ -15,14 +15,14 @@
             <h2 class="activity-card-upload-time"><%= activity.num_hours_ago %></h2>
           </div>
           <h1 class="activity-card-title"><%= activity.title.split.map(&:capitalize).join(' ') %></h1>
-          <h2 class="activity-card-date">Target Date: <%= activity.date %></h2>
+          <h2 class="activity-card-date">Target Date: <%= activity.getDateRepresentation %></h2>
         </div>
       </div>
     </div>
 
       <p class="activity-card-description"><%= activity.description.capitalize %></p>
       <div class="activity-card-capacity">
-        <p><%= activity.spots_left %></p>
+        <p><%= activity.spots_left_new %></p>
       </div>
 
       <% spots_left = activity.group_size - activity.members.where(status: "accept").count %>

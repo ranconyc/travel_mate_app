@@ -1,0 +1,135 @@
+.activity-card-new {
+  display: flex;
+  justify-content: flex-end;
+  background-color: orange;
+  border-radius: 6px;
+  box-shadow: 0px 0px 32px lightgrey;
+  margin-bottom: 15px;
+  height: 115px;
+}
+
+.activity-card-new-info {
+  // position: relative;
+  // right: -13px;
+  background-color: $white;
+  padding: 10px;
+  border-radius: 6px;
+  // margin-bottom: 15px;
+  box-shadow: 0px 0px 32px lightgrey;
+  border-radius: 0px 6px 6px 0px;
+  width: 96%;
+  height: 100%;
+}
+
+.activity-card-new-date-title-category {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.activity-card-new-date-title {
+}
+
+#activity-card-new-date {
+  font-size: 13px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: #6c7176;
+}
+
+#activity-card-new-title {
+  color: black;
+  font-size: 19px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.activity-card-new-category {
+}
+
+.activity-card-new-avatars-capacity {
+  display: flex;
+  justify-content: space-between;
+  height: 45px;
+
+}
+
+.activity-card-new-capacity {
+  align-self: flex-end;
+  font-size: 14px;
+  color: #6c7176;
+  margin-bottom: 0;
+  height: 20px;
+  // position: relative;
+  // right: -182px;
+  // bottom: -26px;
+}
+
+
+
+.category-title-date {
+  width: 100%;
+}
+
+.category-upload-time {
+  display: flex;
+  justify-content: space-between !important;
+}
+
+.activity-card-category {
+  font-size: 16px;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.activity-card-upload-time {
+  font-size: 14px;
+  color: #6c7176;
+  margin-bottom: 0;
+}
+
+
+
+
+
+.activity-card-description {
+  color: #6c7176;
+  height: 100px;
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+
+
+.activity-card-capacity > p {
+  margin-bottom: 5px;
+}
+
+.activity-card-btn-join {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: $white;
+  background-color: $blue;
+  border-radius: $border-radius;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 100%;
+
+  &:hover {
+  text-decoration: none;
+  color: $white;
+  background-color: #4d61f0;
+  }
+}
+
+// To be updated and added more colors
+.activity-card-background-color-blue {
+
+}
+
+.activity-card-new-block {
+  display: block;
+}
