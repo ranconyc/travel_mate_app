@@ -2,7 +2,8 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  & ul {
+  margin: 15px 10px -15px 10px;
+    & ul {
     margin: 0 10px;
   }
 }
@@ -11,16 +12,20 @@
   font-size: 24px;
   color: $black;
   font-weight: bold;
+  margin: 0 10px;
 }
 
 .last-update {
-  color: #848383;
+  color: $white;
   font-size: 12px;
+  font-weight: bold;
+  margin-bottom: -5px;
 }
 
 .margin-chat-box {
+  width: 100%;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 10px 0 0 0;
 }
 
 .header-chat-index {
@@ -31,4 +36,18 @@
     justify-content: center;
     align-items: center;
     padding-top: 50px
+}
+
+ .category-color-line {
+  height: 25px;
+  border-radius: 0 0 6px 6px;
+ }
+
+ .all-messages {
+   margin-top: 60px;
+ }
+
+.last-message-in-chat {
+    margin: 10px 10px 10px 10px;
+    color: gray;
 }

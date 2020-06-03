@@ -6,8 +6,9 @@
         <div class="box-background margin-chat-box">
         <%= link_to chat_path(activity) do %>
           <h1 class="chat-title">
-            <%= activity.title %>
+            <%= activity.title.capitalize %>
           </h1>
+          <p class="last-message-in-chat"> <%= activity.messages.last.content.capitalize %></p>
           <div class="bottom-content-chat-card">
             <ul class="avatars-row-widget">
               <li class="avatar-item">
@@ -33,7 +34,7 @@
               <% end %>
             </div>
           </div>
-        <% end %>
+<div class="category-color-line  category-color-line-<%= activity.category.gsub(/ /, '-').downcase %>"></div>        <% end %>
       </div>
       <% end %>
     </div>

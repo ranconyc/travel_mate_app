@@ -1,16 +1,11 @@
 .activity-card {
   background-color: $white;
-  padding: 20px;
+  padding-top: 20px;
   border-radius: 6px;
   margin-bottom: 15px;
   box-shadow: 0px 0px 32px lightgrey;
 }
 
-.test1 {
-  display: flex;
-  justify-content: space-between;
-  align-content: stretch;
-}
 
 .test {
   display: flex;
@@ -40,6 +35,9 @@
 .category-upload-time {
   display: flex;
   justify-content: space-between !important;
+  & h2 {
+    font-family: $body-font;
+  }
 }
 
 .activity-card-category {
@@ -62,6 +60,7 @@
 }
 
 .activity-card-date {
+  font-size: bold;
   font-size: 14px;
   margin-top: 4px;
   color: #6c7176;
@@ -83,7 +82,9 @@
 }
 
 .activity-card-capacity > p {
-  margin-bottom: 5px;
+  margin-bottom: -6px;
+  color: white;
+  font-weight: bold;
 }
 
 .activity-card-btn-join {
@@ -104,3 +105,17 @@
   background-color: #4d61f0;
   }
 }
+
+.activity-card-bottom {
+  margin: 15px 15px -15px 15px !important;
+}
+
+.activity-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-content: stretch;
+  margin: 0 15px;
+}
+// .color-line-thick {
+//   height: 15px;
+// }

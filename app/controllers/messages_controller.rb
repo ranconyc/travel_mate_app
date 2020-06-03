@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     if @message.save
       ActivityChannel.broadcast_to(
         @activity,
-        render_to_string(partial: "message", locals: { message: @message })
+        render_to_string(partial: "message", locals: { message: @message, flag: "received" })
       )
       redirect_to chat_path(@activity, anchor: "message-#{@message.id}")
     else

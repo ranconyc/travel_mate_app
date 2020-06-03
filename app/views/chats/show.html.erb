@@ -3,7 +3,7 @@
   <div class="container-sm">
     <div id="messages" data-activity-id="<%= @activity.id %>">
       <% @activity.messages.each do |message| %>
-          <%= render 'messages/message', message: message %>
+          <%= render 'messages/message', message: message, flag: 'send' %>
       <% end %>
     </div>
   </div>
