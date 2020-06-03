@@ -2,7 +2,7 @@ class Activity < ApplicationRecord
   include ActionView::Helpers::DateHelper
   include PgSearch::Model
 
-  ACTIVITIES = ['Night Life', 'Nature', 'Food', 'Sport', 'Workshops', 'Travel', 'Culture']
+  ACTIVITIES = ['Food', 'Travel', 'Culture', 'Nature', 'Sport', 'Workshops', 'Night Life']
   VIBES = ['Chill', 'Pump', 'Explore', 'Fun', 'Heavy', 'Good Vibes Only']
 
   belongs_to :user

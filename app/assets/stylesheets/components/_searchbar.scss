@@ -13,7 +13,7 @@
 .search-bar input[type="text"] {
   border: 0px;
   margin: 0px;
-  padding: 5px;
+  padding: 10px;
   flex-grow: 1;
 
   &:focus {
@@ -33,7 +33,7 @@
   text-align: center;
   margin: 5px;
   border: 0px;
-  background-color: #2c4050;
+  background-color: $btn-blue;
 
   &:focus {
     outline: none;

@@ -1,10 +1,12 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
 // Define fonts for body and headers
 $body-font: 'Open Sans', 'sans-serif';
-$headers-font: "Roboto", "Helvetica", "sans-serif";
+$headers-font: 'Lilita One', "Helvetica", "sans-serif";
+$logo-font: 'Roboto', "Helvetica", "sans-serif" ;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

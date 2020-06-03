@@ -129,7 +129,7 @@
   justify-content: center;
   height: 45px;
   width: calc(100%);
-  background-color: #FFA85F;
+  background-color: $btn-blue;
   margin-bottom: 15px;
   // transition: s;
 }
@@ -138,10 +138,11 @@
   border:  #FFA85F;
   font-weight: bold;
   font-display: opt;
+  padding: 10px;
 }
 
 .form-btn{
-  background-color: #FFA85F;
+  background-color: $btn-blue;
 }
 
 
