@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TravelMateApp</title>
+    <!-- <title>TravelMateApp</title> -->
+    <title><%= yield(:title) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag("favicon.svg") %>

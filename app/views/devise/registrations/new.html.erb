@@ -3,7 +3,7 @@
     <%= render 'shared/logo_header' %>
   </div>
     <div class="container-sm">
-      <div class="tm-form">        
+      <div class="tm-form">
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
           <div id="part_1">
@@ -25,14 +25,14 @@
                           required: true,
                           input_html: { autocomplete: "new-password" }, label: false, placeholder: 'Confirm password'%>
               <!-- <%= f.button :submit, "Start Your Profile", class: "tm-btn-primery form-btn", input_html: { class: "forward" } %> -->
-              <button type="button" class="btn btn-primary form-btn" id="forward">Create Your Profile</button>          
+              <button type="button" class="btn btn-primary form-btn" id="forward">Create Your Profile</button>
             </div> <!-- form-inputs -->
           </div> <!-- part 1 -->
           <div id="part_2" hidden>
             <h2 class="form-title">Tell Us About Yourself</h2>
             <div id="upload-photo" class="tm-btn-primery form-btn absolute-0-0">
-              <%= f.input :avatar, as: :file, input_html: { hidden: true,  id: 'photo-input'}, :label_html => { :class => 'absolute-0-0 selected'  }, label: 'Add A Picture' %>           
-            </div> 
+              <%= f.input :avatar, as: :file, input_html: { hidden: true,  id: 'photo-input'}, :label_html => { :class => 'absolute-0-0 selected'  }, label: 'Add A Picture' %>
+            </div>
             <center><%= f.input :gender, as: :radio_buttons, collection:["Male", "Female", "Non-Binary"], wrapper: :vertical_collection_inline %></center>
             <%= f.input :date_of_birth, as: :string, required: false, input_html: {class: "datepicker"}, label: false, placeholder: "What's your birthday?" %>
             <%= f.input :location, label: false, placeholder: 'Current location' %>
@@ -41,13 +41,13 @@
             <div class="form-actions">
               <%= f.button :submit, "Find Some Buddies", class: "tm-btn-primery form-btn" %>
             </div>
-                   
+
             <% end %>
               <div class="login-link">
                 <span>Already have an account?</span>
                 <%= render "devise/shared/links" %>
               </div>
-          </div>    
+          </div>
 
       </div>
     </div>
@@ -56,3 +56,4 @@
   <%= javascript_pack_tag "photo_btn" %>
   <%= javascript_pack_tag "signup_toggle" %>
 
+<% content_for :title, "Sign Up · TravelMate" %>

@@ -22,3 +22,5 @@
       <% end %>
     </div>
 </div>
+
+<% content_for :title, "#{@activity.title.split.map(&:capitalize).join(' ')} Chat · TravelMate" %>

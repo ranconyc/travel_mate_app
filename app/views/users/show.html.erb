@@ -57,3 +57,5 @@
   </div>
 </div>
 <%= render 'shared/bottom-navbar' %>
+
+<% content_for :title, "#{@user.first_name.capitalize} #{@user.last_name.capitalize}'s' Profile · TravelMate" %>
