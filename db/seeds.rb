@@ -15,7 +15,7 @@ UserLanguage.destroy_all
 Language.destroy_all
 User.destroy_all
 
-CATEGORIES = ['Night Life', 'Beach', 'Nature', 'Food', 'Sightseeing', 'Sports', 'Classes', 'Next Destination', 'Culture', 'Music']
+CATEGORIES = ['Night Life', 'Nature', 'Food', 'Sport', 'Workshops', 'Travel', 'Culture']
 VIBES = ['Chill', 'Pump', 'Explore', 'Fun', 'Heavy', 'Good Vibes Only']
 GENDERS = ['Male', 'Female', 'Non-Binary']
 LANGUAGES = ['English', 'Hebrew', 'French', 'German', 'Spanish', 'Arabic', 'Russian', 'Portuguese', 'Greek', 'Italian']
@@ -60,7 +60,7 @@ ACTIVITIES = [
     title: 'scuba diving',
     date: '2020-05-24',
     description: 'Who wants to go scuba diving with me??',
-    category: 'Sports',
+    category: 'Sport',
     vibe: 'Good Vibes Only',
     group_size: 3,
     location: 'Bahamas'
@@ -97,7 +97,7 @@ ACTIVITIES = [
     title: 'looking for a surf buddy',
     date: '2020-05-22',
     description: 'Come and surf with me. 20-30',
-    category: 'Beach',
+    category: 'Nature',
     vibe: 'Good Vibes Only',
     group_size: 2,
     location: 'Byron Bay, Australia'
