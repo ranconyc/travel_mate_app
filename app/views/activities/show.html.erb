@@ -18,7 +18,7 @@
       <span class="activity-category"><%= @activity.category %></span>
     </div>
 
-    <h4 class="activity-date-center"><%= @activity.date %></h4>
+    <h4 class="activity-date-center"><%= @activity.getDateRepresentation %></h4>
     <h1 class="activity-title"><%= @activity.title.split.map(&:capitalize).join(' ') %></h1>
 
     <ul class="avatars-row-widget">

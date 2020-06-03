@@ -37,6 +37,17 @@ class Activity < ApplicationRecord
     end
   end
 
+  def spots_left_new
+    num_spots_left = self.group_size - self.members.where(status: "accept").count
+    if num_spots_left == 1
+      return "1/#{group_size} spot left"
+    elsif num_spots_left > 1
+      return "#{num_spots_left}/#{group_size} spots left"
+    elsif num_spots_left == 0
+      return "Full"
+    end
+  end
+
   def num_hours_ago
     time_string = time_ago_in_words(self.created_at) + " ago"
     if time_string.include? "about"
@@ -49,5 +60,22 @@ class Activity < ApplicationRecord
 
   def member?(user)
     users.include?(user)
+  end
+
+  def getDateRepresentation
+    months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    date_arr = self.date.to_s.split('-')
+    month = months[date_arr[1].to_i - 1]
+    day = date_arr[2].to_i
+    if day == 1 || day == 31
+      dayStr = "#{day}st"
+    elsif day == 2 || day == 22
+      dayStr = "#{day}nd"
+    elsif day == 3 || day == 23
+      dayStr = "#{day}rd"
+    else
+      dayStr = "#{day}th"
+    end
+    return "#{month} #{dayStr}, #{date_arr[0]}"
   end
 end

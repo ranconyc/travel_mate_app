@@ -12,10 +12,10 @@
       <%= link_to "Log in", new_user_session_path, class: "tm-btn-secondary" %>
     </div>
   </div>
-  <div class="container-mobile">
-    <div class="Recent">
+  <div class="container-mobile mt-3">
+<!--     <div class="Recent">
       <h2>Recent activities</h2>
-    </div>
+    </div> -->
       <% @activities_limit.each do |single_activity| %>
         <%= render 'shared/activity-card', activity: single_activity %>
       <% end %>
