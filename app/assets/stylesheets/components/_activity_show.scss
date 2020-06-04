@@ -32,6 +32,7 @@
 .activity-edit-delete-btns {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .btn-activity-edit, .btn-activity-delete {
@@ -50,17 +51,24 @@
 }
 
 .btn-activity-edit {
-  background-color: #1b2270;
+  color: $black;
+  font-size: 18px;
 
   &:hover {
-    background-color: #141945;
+    color: $btn-blue;
   }
 }
 
 .btn-activity-delete {
-  background-color: red;
+  color: $black;
+  font-size: 18px;
 
   &:hover {
-    background-color: #9e181a;
+    color: $btn-blue;
   }
+}
+
+.title-action-profile {
+  font-size: 14px;
+  margin: 0 !important;
 }

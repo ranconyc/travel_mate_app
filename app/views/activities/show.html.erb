@@ -93,12 +93,18 @@
           <%= spots_left_text %>
         <% end %>
       </p>
-
+      <div class="edit-delete-btns">
       <% if @activity.user_id == current_user.id %>
+           <div class="divider"></div>
         <div class="activity-edit-delete-btns">
-          <%= link_to "Edit", edit_activity_path, class: "btn-activity-edit" %>
-          <%= link_to "Delete", activity_path, method: :delete, class: "btn-activity-delete" %>
+          <%= link_to edit_activity_path, class: "btn-activity-edit" do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+          <%= link_to activity_path, method: :delete, class: "btn-activity-delete" do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
         </div>
+      </div>
       <% else %>
         <% if @activity.member?(current_user) %>
           <% my_member = @activity.members.find_by(user_id: current_user.id) %>
