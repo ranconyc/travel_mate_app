@@ -1,20 +1,28 @@
+.header-scroll {
+  width: 100%;
+  position: fixed;
+  background-color: $gray;
+  z-index: 100;
+  }
+
 .category-scroll {
   overflow: auto;
   height: 80px;
   display: flex;
   flex-direction: row;
-  margin-left: 16px;
-  margin-right: 16px;
-  margin-top: 9px;
-  margin-bottom: 14px;
+  margin: 8px 16px 5px 16px;
   overflow-y: scroll;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
 
 .category-scroll::-webkit-scrollbar { /* WebKit */
-    width: 0;
-    height: 0;
+  width: 0;
+  height: 0;
+}
+
+.all-results-scroll {
+  padding-top: 275px;
 }
 
 .cat-card {
