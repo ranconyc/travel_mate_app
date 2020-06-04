@@ -1,0 +1,47 @@
+<%= link_to activity_path(activity) do %>
+  <div class="activity-card activity-card-category-<%= activity.category %>" id="activity-card-<%= activity.id %>">
+    <div class="activity-card-top">
+      <div class="avatar-category-title-date">
+        <div class="category-title-date">
+          <div class="category-upload-time">
+            <h2 class="activity-card-date"><%= activity.getDateRepresentation %></h2>
+            <h2 class="activity-card-upload-time"><%= activity.num_hours_ago %></h2>
+          </div>
+          <h1 class="activity-card-title"><%= activity.title.split.map(&:capitalize).join(' ') %></h1>
+        </div>
+      </div>
+    </div>
+     <div class="bottom-content-chat-card activity-card-bottom">
+            <ul class="avatars-row-widget">
+              <li class="avatar-item">
+                <div class="activity-show-avatar"
+                   style="background-image: url('<%= cl_image_path activity.user.avatar.key,
+                   gravity: 'face', height: 50, width: 50, crop: :fill %>')">
+                </div>
+              </li>
+              <% activity.members.each do |member| %>
+                <% if member.status == "accept" %>
+                  <li class="avatar-item">
+                    <div class="activity-show-avatar"
+                         style="background-image: url('<%= cl_image_path member.user.avatar.key,
+                         gravity: 'face', height: 50, width: 50, crop: :fill %>')">
+                    </div>
+                  </li>
+                  <% end %>
+                  <% end %>
+            </ul>
+      <div class="activity-card-capacity">
+        <% if activity.user == current_user %>
+        <p>Owner</p>
+        <% else %>
+          <% activity.members.each do |member|  %>
+            <% if member.user == current_user %>
+               <p> Member : <%= member.status.capitalize %> </p>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+  </div>
+    <div class="category-color-line  category-color-line-<%= activity.category.gsub(/ /, '-').downcase %>"></div>
+</div>
+<% end %>

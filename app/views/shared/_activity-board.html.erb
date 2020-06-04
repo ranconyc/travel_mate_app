@@ -1,7 +1,7 @@
 <div class="board">
   <% if !activities.empty? %>
     <% activities.each do |activity| %>
-      <%= render 'shared/activity-card', activity: activity %>
+      <%= render 'shared/activity-card-dashboard', activity: activity %>
     <% end %>
   <% else %>
     <h2 id="msg-no-requests">You don't have any activities!</h2>

@@ -57,28 +57,36 @@
 }
 
 .request-btn-accept, .request-btn-decline {
+  width: 100%;
   padding: 5px 44px;
   border-radius: 6px;
   font-weight: bold;
 }
 
 .request-btn-accept {
-  background-color: $blue;
+ font-family: $headers-font;
+  background: $btn-blue;
   color: $white;
-
+  border-radius: 4px;
+  text-align: center;
   &:hover {
-    background-color: #4d61f0;
+    text-decoration: none;
     color: $white;
+    background: $btn-orange;
   }
 }
 
 .request-btn-decline {
-  background-color: $white;
-  color: #94A1FD;
-  border: 1px solid #94A1FD;
-
-  &:hover {
-  background-color: #94A1FD;
+  font-family: $headers-font;
+  background: $btn-orange;
   color: $white;
+  border-radius: 4px;
+  text-align: center;
+  margin-left: 10px;
+  &:hover {
+    text-decoration: none;
+    color: $white;
+    background: $btn-blue;
   }
 }
+
