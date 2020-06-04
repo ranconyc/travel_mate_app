@@ -32,7 +32,7 @@ URLS = [
   "https://i2.cdn.turner.com/cnn/2010/TECH/social.media/11/24/facebook.profile.shots.netiquette/t1larg.man.beer.jpg",
 
   "https://i.pinimg.com/236x/fe/dd/a6/fedda6e0a168a1cabad3c71b61c47c7b.jpg",
-  "https://lh3.googleusercontent.com/proxy/BhfUkC96M1oOtvhj7GwwygvPrzO1SyUR-8pmWXYPBYiVzI-dWNEMM8AHu87z5l9uGb-DCMsJsPDnBJYRXuGMnBbEoSDbWEqb0reZYMwj7oTqprM3M9dBI6wFuXP3",
+  "https://image.freepik.com/free-photo/happy-traveller-man-takes-selfie-photo-lake-mountain_169160-41.jpg",
   "https://sa1s3optim.patientpop.com/assets/images/provider/photos/1776619.jpg",
   "https://freedesignfile.com/upload/2019/03/Beautiful-woman-face-makeup-artist-applies-eyeshadow-Stock-Photo-03.jpg",
   "https://i.pinimg.com/originals/5e/81/37/5e81371c890a88377dd2195a99d3deba.jpg",
