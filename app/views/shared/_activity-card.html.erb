@@ -5,7 +5,31 @@
         <div class="category-title-date">
           <div class="category-upload-time">
             <h2 class="activity-card-date"><%= activity.getDateRepresentation %></h2>
-            <h2 class="activity-card-upload-time"><%= activity.num_hours_ago %></h2>
+            <div class="activity-category-icon activity-category-icon-<%= activity.category.gsub(/ /, '-').downcase %>">
+              <% case activity.category %>
+                <% when 'Night Life' %>
+                  <i class="fas fa-glass-cheers"></i>
+                  <p>Night Life</p>
+                <% when 'Nature' %>
+                  <i class="fas fa-tree"></i>
+                  <p>Nature</p>
+                <% when 'Food'%>
+                  <i class="fas fa-utensils"></i>
+                  <p>Food</p>
+                <% when 'Sport'%>
+                  <i class="fas fa-running"></i>
+                  <p>Sport</p>
+                <% when 'Workshops'%>
+                  <i class="fas fa-graduation-cap"></i>
+                  <p>Workshops</p>
+                <% when 'Culture'%>
+                  <i class="fas fa-image"></i>
+                  <p>Culture</p>
+                <% when 'Travel'%>
+                  <i class="fas fa-bus"></i>
+                  <p>Travel</p>
+              <% end %>
+            </div>
           </div>
           <h1 class="activity-card-title"><%= activity.title.split.map(&:capitalize).join(' ') %></h1>
         </div>

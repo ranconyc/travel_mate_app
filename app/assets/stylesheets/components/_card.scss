@@ -35,6 +35,7 @@
 .category-upload-time {
   display: flex;
   justify-content: space-between !important;
+  align-items: flex-end !important;
   & h2 {
     font-family: $body-font;
   }
@@ -119,3 +120,15 @@
 // .color-line-thick {
 //   height: 15px;
 // }
+.activity-category-icon {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  & i {
+    font-size: 17px;
+  }
+  & p {
+    margin: 0;
+  }
+}
