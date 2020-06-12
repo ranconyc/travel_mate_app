@@ -2,7 +2,7 @@
 <%= render 'shared/logo_header', text: 'Your Chats', logo_class: 'header-chat-index logo-homepage' %>
   <div class="container-sm">
     <div class="all-messages">
-      <% @accepted_activities.each do |activity| %>
+      <% @chat_activities.each do |activity| %>
         <div class="box-background margin-chat-box">
         <%= link_to chat_path(activity) do %>
           <h1 class="chat-title">
